@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Restored Exact Dark Theme Colors */
+  --color-navy: #0A1628;
+  --color-electric: #0E7CC4;
+  --color-neonPurple: #8A2BE2;
+  --color-cyan: #00FFFF;
+  --color-gold: #B8860B;
+  --color-success: #1A7A4A;
+  --color-error: #C0392B;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-heading: var(--font-orbitron), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-text-shimmer: text-shimmer 4s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-scroll-circuit: scrollCircuit 30s linear infinite;
+
+  @keyframes text-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(14,124,196,0.4); }
+    50% { text-shadow: 0 0 40px rgba(14,124,196,0.8), 0 0 80px rgba(0,255,255,0.4); }
+  }
+  @keyframes scrollCircuit {
+    0% { background-position: 0 0; }
+    100% { background-position: 120px 120px; }
   }
 }
 
+/* Restored Dark Circuit Background */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #030811; 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%230E7CC4' stroke-width='1' stroke-opacity='0.15'%3E%3Cpath d='M15 15 h 30 v 30 h 30' /%3E%3Ccircle cx='75' cy='45' r='2' fill='%230E7CC4' fill-opacity='0.4'/%3E%3Cpath d='M105 105 h -40 v -30 h -30' /%3E%3Ccircle cx='35' cy='75' r='2' fill='%230E7CC4' fill-opacity='0.4'/%3E%3Cpath d='M15 105 h 15 v -60 h 15' /%3E%3Ccircle cx='45' cy='45' r='2' fill='%230E7CC4' fill-opacity='0.4'/%3E%3Cpath d='M105 15 h -15 v 60 h -15' /%3E%3Ccircle cx='75' cy='75' r='2' fill='%230E7CC4' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  animation: scrollCircuit 30s linear infinite;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Restored Dark Glassmorphism */
+.glass-panel { 
+  background: rgba(10, 22, 40, 0.4); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden; 
+  z-index: 10;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+}
+
+.glass-panel-interactive:hover::after { left: 200%; }
+.glass-panel-interactive:hover { 
+  border-color: rgba(14, 124, 196, 0.5); 
+  box-shadow: 0 15px 40px -5px rgba(14, 124, 196, 0.3);
+  transform: translateY(-4px);
+}
+
+.hero-ambient-glow {
+  background: radial-gradient(ellipse at center, rgba(3,8,17,0.8) 0%, rgba(3,8,17,0.4) 40%, transparent 70%);
 }
