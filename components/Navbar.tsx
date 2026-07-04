@@ -55,38 +55,42 @@ export default function Navbar() {
                 </nav>
 
                 <div className="p-6 border-t border-white/10 bg-transparent">
-                    {/* UPDATED: Google Form Link Placeholder */}
                     <Link href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-[0_0_15px_rgba(14,124,196,0.4)]">
                         Register Now
                     </Link>
                 </div>
             </aside>
 
-            <nav className="fixed top-0 w-full z-30 bg-[#030811]/85 backdrop-blur-md border-b border-electric/40 shadow-[0_5px_20px_rgba(14,124,196,0.15)] py-3">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-20 gap-2 md:gap-6">
+            {/* UPDATED: Nav Background and Adaptive Sizing */}
+            <nav className="fixed top-0 w-full z-30 bg-[#030811]/85 backdrop-blur-md border-b border-electric/40 shadow-[0_5px_20px_rgba(14,124,196,0.15)] py-2 sm:py-3">
+                <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+                    <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-1 md:gap-6">
                         
-                        <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="bg-white p-1.5 sm:p-2 rounded-xl h-14 w-20 sm:h-16 sm:w-28 flex items-center justify-center border-2 border-electric/30 shadow-[0_0_10px_rgba(14,124,196,0.2)]">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                            {/* Adaptive Logo 1 */}
+                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-[0_0_10px_rgba(14,124,196,0.2)]">
                                 <img src="/logo/bitm.png" alt="BITM Logo" className="max-h-full max-w-full object-contain" />
                             </div>
-                            <div className="bg-white p-1.5 sm:p-2 rounded-xl h-14 w-20 sm:h-16 sm:w-28 flex items-center justify-center border-2 border-electric/30 shadow-[0_0_10px_rgba(14,124,196,0.2)]">
+                            {/* Adaptive Logo 2 */}
+                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-[0_0_10px_rgba(14,124,196,0.2)]">
                                 <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                         </div>
 
-                        <div className="text-center px-2">
-                            <Link href="/" className="font-heading text-xl sm:text-2xl md:text-3xl font-black tracking-widest block drop-shadow-[0_0_15px_rgba(14,124,196,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 hover:from-electric hover:to-cyan transition-all duration-300">
+                        {/* Hidden on mobile, visible on desktop to save space */}
+                        <div className="hidden md:block text-center px-2 flex-1">
+                            <Link href="/" className="font-heading md:text-2xl lg:text-3xl font-black tracking-widest block drop-shadow-[0_0_15px_rgba(14,124,196,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 hover:from-electric hover:to-cyan transition-all duration-300">
                                 NEONEXUS 36.1
                             </Link>
                         </div>
 
-                        <div className="flex items-center gap-3 sm:gap-4">
-                            <div className="bg-white p-1.5 sm:p-2 rounded-xl h-14 w-20 sm:h-16 sm:w-28 flex items-center justify-center border-2 border-cyan/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
+                            {/* Adaptive Logo 3 */}
+                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-cyan/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
                             </div>
 
-                            <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-2.5 rounded-xl border border-electric/40 shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all">
+                            <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-1.5 sm:p-2.5 rounded-lg border border-electric/40 shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all">
                                 <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
