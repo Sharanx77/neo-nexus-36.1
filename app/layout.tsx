@@ -16,7 +16,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Neo-Nexus 36.1 | National Multi-Domain Hackathon",
+  title: "Neo-Nexus 36.1 ",
   description: "36 Hours of relentless innovation. Build embedded systems, architect smart cities, and deploy humanitarian AI.",
 };
 
