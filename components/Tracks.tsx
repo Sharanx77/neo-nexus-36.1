@@ -1,10 +1,10 @@
 export default function Tracks() {
   const tracks = [
-    { id: 'AI', title: 'AI for Humanitarian Tech', desc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.', pdfPath: '/YOUR_PDF_FOLDER/ai-problem-statement.pdf' },
-    { id: 'CKTD', title: 'Circuit Design', desc: 'Embedded systems, PCB design, VLSI and hardware engineering.', pdfPath: '/YOUR_PDF_FOLDER/circuit-design-problem-statement.pdf' },
-    { id: 'UIT', title: 'Urban Intelligence Tech', desc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.', pdfPath: '/YOUR_PDF_FOLDER/urban-intelligence-problem-statement.pdf' },
-    { id: 'AERO', title: 'Aerospace', desc: 'Drones, satellite technology, navigation systems and aerospace innovation.', pdfPath: '/YOUR_PDF_FOLDER/aerospace-problem-statement.pdf' },
-    { id: 'MOB', title: 'Mobility', desc: 'EVs, autonomous vehicles, transportation and logistics solutions.', pdfPath: '/YOUR_PDF_FOLDER/mobility-problem-statement.pdf' },
+    { id: 'AI', title: 'AI for Humanitarian Tech', desc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.', pdfPath: '/PS/AI_human.pdf' },
+    { id: 'CKTD', title: 'Circuit Design', desc: 'Embedded systems, PCB design, VLSI and hardware engineering.', pdfPath: '/PS/circuit_design.pdf' },
+    { id: 'UIT', title: 'Urban Intelligence Tech', desc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.', pdfPath: '/PS/urban_intelligence.pdf' },
+    { id: 'AERO', title: 'Aerospace', desc: 'Drones, satellite technology, navigation systems and aerospace innovation.', pdfPath: '/PS/aerospace.pdf' },
+    { id: 'MOB', title: 'Mobility', desc: 'EVs, autonomous vehicles, transportation and logistics solutions.', pdfPath: ' /PS/mobility.pdf' },
     { id: 'CYBR', title: 'Cyber Security', desc: 'Threat detection, secure systems, ethical hacking and data privacy.', pdfPath: '' },
   ];
 
