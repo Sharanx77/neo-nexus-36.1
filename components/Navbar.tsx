@@ -38,7 +38,7 @@ export default function Navbar() {
                 </nav>
 
                 <div className="p-6 border-t border-white/10 bg-transparent">
-                    <Link href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.4)]">
+                    <Link href="https://forms.gle/B1VFdsEG327MR2xs8" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.4)]">
                         Register Now
                     </Link>
                 </div>
