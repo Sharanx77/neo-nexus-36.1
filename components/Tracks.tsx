@@ -1,11 +1,41 @@
 export default function Tracks() {
   const tracks = [
-    { id: 'AI', title: 'AI for Humanitarian Tech', desc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.' },
-    { id: 'CKTD', title: 'Circuit Design', desc: 'Embedded systems, PCB design, VLSI and hardware engineering.' },
-    { id: 'UIT', title: 'Urban Intelligence Tech', desc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.' },
-    { id: 'AERO', title: 'Aerospace', desc: 'Drones, satellite technology, navigation systems and aerospace innovation.' },
-    { id: 'MOB', title: 'Mobility', desc: 'EVs, autonomous vehicles, transportation and logistics solutions.' },
-    { id: 'CYBR', title: 'Cyber Security', desc: 'Threat detection, secure systems, ethical hacking and data privacy.' },
+    { 
+      id: 'AI', 
+      title: 'AI for Humanitarian Tech', 
+      desc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.',
+      pdfPath: '/PS/AI_human.pdf' 
+    },
+    { 
+      id: 'CKTD', 
+      title: 'Circuit Design', 
+      desc: 'Embedded systems, PCB design, VLSI and hardware engineering.',
+      pdfPath: '/PS/circuit_design.pdf' 
+    },
+    { 
+      id: 'UIT', 
+      title: 'Urban Intelligence Tech', 
+      desc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.',
+      pdfPath: '/PS/urban_intelligence.pdf' 
+    },
+    { 
+      id: 'AERO', 
+      title: 'Aerospace', 
+      desc: 'Drones, satellite technology, navigation systems and aerospace innovation.',
+      pdfPath: '/PS/aerospace.pdf' 
+    },
+    { 
+      id: 'MOB', 
+      title: 'Mobility', 
+      desc: 'EVs, autonomous vehicles, transportation and logistics solutions.',
+      pdfPath: '/PS/mobility.pdf' 
+    },
+    { 
+      id: 'CYBR', 
+      title: 'Cyber Security', 
+      desc: 'Threat detection, secure systems, ethical hacking and data privacy.',
+      pdfPath: '' // Left empty to trigger the "Coming Soon" state
+    },
   ];
 
   return (
@@ -34,9 +64,34 @@ export default function Tracks() {
                 {track.title}
               </h3>
               
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-grow relative z-10 group-hover:text-gray-200">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-grow relative z-10 group-hover:text-gray-200 mb-6">
                 {track.desc}
               </p>
+
+              {/* PDF Download Button / Coming Soon State */}
+              <div className="relative z-10 mt-auto pt-2 border-t border-white/5 group-hover:border-cyan/20 transition-colors">
+                {track.pdfPath ? (
+                  <a 
+                    href={track.pdfPath} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full bg-cyan/5 hover:bg-cyan/15 border border-cyan/30 hover:border-cyan text-cyan font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-[0_0_10px_rgba(6,182,212,0.1)] hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Problem Statement
+                  </a>
+                ) : (
+                  <div className="flex items-center justify-center gap-2 w-full bg-gray-800/30 border border-gray-600/50 text-gray-400 font-semibold py-2.5 px-4 rounded-xl text-sm cursor-not-allowed">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Will be released soon
+                  </div>
+                )}
+              </div>
+              
             </div>
           ))}
         </div>
