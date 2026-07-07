@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full max-w-md mx-auto sm:max-w-none px-4 sm:px-0">
-          <Link href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all shadow-[0_0_20px_rgba(14,124,196,0.5)] hover:shadow-[0_0_40px_rgba(14,124,196,0.8)] hover:scale-105 border border-white/10 text-center">
+          <Link href="https://forms.gle/B1VFdsEG327MR2xs8" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all shadow-[0_0_20px_rgba(14,124,196,0.5)] hover:shadow-[0_0_40px_rgba(14,124,196,0.8)] hover:scale-105 border border-white/10 text-center">
             Register Now
           </Link>
           <Link href="#tracks" className="w-full sm:w-auto bg-[#030811]/60 backdrop-blur-md hover:bg-white/10 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all border border-gray-500 hover:border-electric hover:shadow-[0_0_20px_rgba(14,124,196,0.3)] text-center">
