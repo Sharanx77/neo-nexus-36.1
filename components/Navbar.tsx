@@ -54,7 +54,7 @@ export default function Navbar() {
                                 <img src="/logo/bitm.png" alt="BITM Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                             <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
-                                <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
+                             <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                         </div>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
 
                         <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
                             <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
-                                <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
+                                <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
                             </div>
 
                             <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-1.5 sm:p-2.5 rounded-lg border border-electric/40 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all">
