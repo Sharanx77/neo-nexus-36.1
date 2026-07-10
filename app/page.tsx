@@ -1,10 +1,10 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Stats from "../components/Stats";
+// Removed Stats since they are now beautifully integrated into the About section!
 import About from "../components/About";
 import Tracks from "../components/Tracks";
 import Timeline from "../components/Timeline";
-import MediaGallery from "../components/MediaGallery";
+import Gallery from "../components/Gallery"; // Updated to match our file name
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
 import Contact from "../components/Contact";
@@ -14,18 +14,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scrolling issues */}
         <Hero />
-        <Stats />
         <About />
         <Tracks />
         <Timeline />
-        <MediaGallery />
+        <Gallery /> 
         <Sponsors />
         <Host />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
