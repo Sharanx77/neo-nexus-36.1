@@ -60,7 +60,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* --- NEW: VIDEO SECTION --- */}
+        {/* --- VIDEO SECTION --- */}
         <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-electric/30 shadow-[0_0_25px_rgba(14,124,196,0.1)] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan"></div>
           
@@ -71,6 +71,7 @@ export default function About() {
           <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)] group">
             <video 
               src="/NN36.0/NN36video.mp4" 
+              poster="/YOUR_POSTER_IMAGE.jpg" 
               controls 
               muted 
               className="w-full h-full object-cover"
