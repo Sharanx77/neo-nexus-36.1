@@ -54,7 +54,7 @@ export default function Navbar() {
                                 <img src="/logo/bitm.png" alt="BITM Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                             <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
-                             <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
+                                <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                         </div>
 
