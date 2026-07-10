@@ -65,13 +65,13 @@ export default function About() {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan"></div>
           
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6 sm:mb-8 font-heading text-center text-white">
-            Neo-Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">In Action</span>
+            Neo-Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">36.0</span>
           </h3>
           
           <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)] group">
             <video 
               src="/NN36.0/NN36video.mp4" 
-              poster="/YOUR_POSTER_IMAGE.jpg" 
+              poster="/NN36.0/screen.png" 
               controls 
               muted 
               className="w-full h-full object-cover"
