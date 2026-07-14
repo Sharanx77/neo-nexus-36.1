@@ -16,8 +16,11 @@ export default function Hero() {
           <span className="text-white md:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] block mb-2">NEO-NEXUS 36.1</span>
         </h1>
         
-        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 tracking-tight uppercase text-white leading-snug">
-          Where Ideas <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-cyan to-neonPurple bg-[length:200%_auto] md:animate-text-shimmer">Collide.</span> Innovations Emerge.
+        {/* UPDATED TAGLINE */}
+        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 tracking-tight leading-snug">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-cyan to-neonPurple bg-[length:200%_auto] md:animate-text-shimmer">
+            The origin of what’s next.
+          </span>
         </h2>
         
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-10 sm:mb-12 font-normal max-w-4xl mx-auto leading-relaxed px-2">
