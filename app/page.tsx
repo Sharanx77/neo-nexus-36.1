@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Tracks from "../components/Tracks";
 import Timeline from "../components/Timeline";
-import Gallery from "../components/Gallery"; // Updated to match our file name
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
 import Contact from "../components/Contact";
@@ -19,7 +18,6 @@ export default function Home() {
         <About />
         <Tracks />
         <Timeline />
-        <Gallery /> 
         <Sponsors />
         <Host />
         <Contact />
