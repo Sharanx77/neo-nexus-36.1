@@ -1,7 +1,7 @@
 export default function Timeline() {
   const schedule = [
-    { phase: 'Phase 1', date: '[TBD: Late July 2026]', title: 'Registration & Abstract', desc: 'Open registration, team formation, and abstract submission via website.', glow: 'hover:border-electric/50 hover:shadow-[0_0_25px_rgba(14,124,196,0.3)]', bar: 'bg-electric', textCol: 'text-electric' },
-    { phase: 'Phase 2', date: '[TBD: Late July 2026]', title: 'Abstract Shortlisting', desc: 'Abstracts reviewed; shortlisted teams notified by email.', glow: 'hover:border-cyan/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)]', bar: 'bg-cyan', textCol: 'text-cyan' },
+    { phase: 'Phase 1', date: '20th July -- 5th August 2026', title: 'Registration & Abstract', desc: 'Open registration, team formation, and abstract submission via website.', glow: 'hover:border-electric/50 hover:shadow-[0_0_25px_rgba(14,124,196,0.3)]', bar: 'bg-electric', textCol: 'text-electric' },
+    { phase: 'Phase 2', date: '10th August -- 13th August', title: 'Abstract Shortlisting', desc: 'Abstracts reviewed; shortlisted teams notified by email.', glow: 'hover:border-cyan/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)]', bar: 'bg-cyan', textCol: 'text-cyan' },
     { phase: 'Phase 3', date: '22nd August 2026', title: 'Final Hackathon Day 1', desc: 'Inauguration, check-in at BITM Ballari, and hackathon commencement.', glow: 'hover:border-gold/50 hover:shadow-[0_0_25px_rgba(234,179,8,0.3)]', bar: 'bg-gold', textCol: 'text-gold' },
     { phase: 'Phase 4', date: '23rd August 2026', title: 'Final Hackathon Day 2', desc: 'Hackathon ends, jury evaluation, presentations, results, and prize distribution.', glow: 'hover:border-gold/50 hover:shadow-[0_0_25px_rgba(234,179,8,0.3)]', bar: 'bg-gold', textCol: 'text-gold' },
   ];
