@@ -36,7 +36,6 @@ export default function Footer() {
               <Link href="#about" className="text-gray-400 hover:text-electric transition-colors">About</Link>
               <Link href="#tracks" className="text-gray-400 hover:text-electric transition-colors">Tracks</Link>
               <Link href="#timeline" className="text-gray-400 hover:text-electric transition-colors">Timeline</Link>
-              <Link href="#gallery" className="text-gray-400 hover:text-electric transition-colors">Gallery</Link>
               <Link href="#sponsors" className="text-gray-400 hover:text-electric transition-colors">Sponsors</Link>
               <Link href="#host" className="text-gray-400 hover:text-electric transition-colors">Host Institution</Link>
               <Link href="#contact" className="text-gray-400 hover:text-electric transition-colors">Contact</Link>
