@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Tracks from "../components/Tracks";
 import Timeline from "../components/Timeline";
+import Winners from "../components/Winners";
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
 import Contact from "../components/Contact";
@@ -16,6 +17,7 @@ export default function Home() {
       <main className="overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scrolling issues */}
         <Hero />
         <About />
+        <winners/>
         <Tracks />
         <Timeline />
         <Sponsors />
