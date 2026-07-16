@@ -17,7 +17,7 @@ export default function Home() {
       <main className="overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scrolling issues */}
         <Hero />
         <About />
-        <winners/>
+        <Winners/>
         <Tracks />
         <Timeline />
         <Sponsors />
