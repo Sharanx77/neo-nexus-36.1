@@ -29,71 +29,68 @@ export default function Tracks() {
     setActiveProblem(activeProblem === problemId ? null : problemId);
   };
 
-  // Placeholder Track Data (Update with your actual 6 domains and problems)
+  // Track Data perfectly matching your design
   const trackData = [
     {
       id: 'ai',
-      name: 'Artificial Intelligence',
-      icon: '🧠',
-      glow: 'from-blue-500 to-cyan-500',
+      tag: 'AI',
+      name: 'AI for Humanitarian Tech',
+      shortDesc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.',
       problems: [
         { id: 'NN-AI-01', title: 'Intelligent Traffic Optimization', desc: 'Develop a computer vision-based model that optimizes traffic light timings dynamically based on real-time vehicle density to reduce urban congestion.' },
-        { id: 'NN-AI-02', title: 'AI Healthcare Diagnostics', desc: 'Build an AI tool that analyzes medical imaging (X-rays/MRIs) to assist doctors in early anomaly detection with high accuracy.' }
+        { id: 'NN-AI-02', title: 'AI Healthcare Diagnostics', desc: 'Build an AI tool that analyzes medical imaging to assist doctors in early anomaly detection with high accuracy.' }
       ]
     },
     {
       id: 'circuit',
+      tag: 'CKTD',
       name: 'Circuit Design',
-      icon: '⚡',
-      glow: 'from-purple-500 to-pink-500',
+      shortDesc: 'Embedded systems, PCB design, VLSI and hardware engineering.',
       problems: [
         { id: 'NN-CD-01', title: 'Ultra-Low Power IoT Sensor', desc: 'Design a schematic for an energy-harvesting sensor node capable of sustaining operation on solar or thermal power without battery replacement.' },
         { id: 'NN-CD-02', title: 'Automated PCB Fault Detector', desc: 'Create a system to automatically identify short circuits, open circuits, and soldering defects in manufactured PCBs.' }
       ]
     },
     {
-      id: 'cyber',
-      name: 'Cyber Security',
-      icon: '🛡️',
-      glow: 'from-emerald-400 to-cyan-500',
-      problems: [
-        { id: 'NN-CS-01', title: 'Zero-Trust Network Architecture', desc: 'Develop a lightweight zero-trust authentication protocol specifically tailored for deployment in constrained local networks.' },
-        { id: 'NN-CS-02', title: 'Ransomware Containment', desc: 'Create an automated sandboxing script that detects encryption behavior in real-time and quarantines the infected node.' }
-      ]
-    },
-    {
-      id: 'aero',
-      name: 'Aerospace & Mobility',
-      icon: '🚀',
-      glow: 'from-orange-500 to-yellow-500',
-      problems: [
-        { id: 'NN-AM-01', title: 'Autonomous Drone Navigation', desc: 'Develop an algorithm for UAVs to navigate, avoid obstacles, and map GPS-denied environments using LiDAR or optical flow.' },
-        { id: 'NN-AM-02', title: 'Smart EV Battery Management', desc: 'Design an interface and backend logic to monitor thermal states and optimize cell balancing in high-capacity EV battery packs.' }
-      ]
-    },
-    {
       id: 'uit',
-      name: 'Urban Infrastructure',
-      icon: '🏙️',
-      glow: 'from-electric to-blue-400',
+      tag: 'UIT',
+      name: 'Urban Intelligence Tech',
+      shortDesc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.',
       problems: [
         { id: 'NN-UIT-01', title: 'Smart Waste Management', desc: 'Create an IoT-based bin monitoring system that optimizes garbage truck routing based on real-time fill-levels.' },
         { id: 'NN-UIT-02', title: 'Dynamic Grid Load Balancing', desc: 'Propose a software solution to manage smart grid power distribution and prevent blackouts during peak urban hours.' }
       ]
     },
     {
-      id: 'web',
-      name: 'Web & App Dev',
-      icon: '💻',
-      glow: 'from-neonPurple to-indigo-500',
+      id: 'aero',
+      tag: 'AERO',
+      name: 'Aerospace',
+      shortDesc: 'Drones, satellite technology, navigation systems and aerospace innovation.',
       problems: [
-        { id: 'NN-WEB-01', title: 'Decentralized Credential Verification', desc: 'Build a secure, tamper-proof web portal for institutions to issue and verify academic certificates using blockchain.' },
-        { id: 'NN-WEB-02', title: 'Hyper-Local Disaster Alert App', desc: 'Develop a mobile application that uses mesh networking to broadcast emergency SOS alerts when standard cellular grids fail.' }
+        { id: 'NN-AERO-01', title: 'Autonomous Drone Navigation', desc: 'Develop an algorithm for UAVs to navigate, avoid obstacles, and map GPS-denied environments using LiDAR or optical flow.' }
+      ]
+    },
+    {
+      id: 'mob',
+      tag: 'MOB',
+      name: 'Mobility',
+      shortDesc: 'EVs, autonomous vehicles, transportation and logistics solutions.',
+      problems: [
+        { id: 'NN-MOB-01', title: 'Smart EV Battery Management', desc: 'Design an interface and backend logic to monitor thermal states and optimize cell balancing in high-capacity EV battery packs.' }
+      ]
+    },
+    {
+      id: 'cybr',
+      tag: 'CYBR',
+      name: 'Cyber Security',
+      shortDesc: 'Threat detection, secure systems, ethical hacking and data privacy.',
+      problems: [
+        { id: 'NN-CYBR-01', title: 'Zero-Trust Network Architecture', desc: 'Develop a lightweight zero-trust authentication protocol specifically tailored for deployment in constrained local networks.' },
+        { id: 'NN-CYBR-02', title: 'Ransomware Containment', desc: 'Create an automated sandboxing script that detects encryption behavior in real-time and quarantines the infected node.' }
       ]
     }
   ];
 
-  // Find the currently active domain data for the modal
   const activeDomainData = trackData.find(d => d.id === activeDomain);
 
   return (
@@ -105,22 +102,45 @@ export default function Tracks() {
             Hackathon <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">Tracks</span>
           </h2>
           <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
-            Select a domain card below to explore its official problem statements.
+            Select a domain below to explore its official problem statements.
           </p>
         </div>
 
-        {/* DOMAIN CARDS GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        {/* DOMAIN CARDS GRID (Matching the provided design) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trackData.map((domain) => (
             <div 
               key={domain.id}
               onClick={() => openDomain(domain.id)}
-              className="cursor-pointer rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 border border-white/10 backdrop-blur-md relative overflow-hidden group bg-[#030811]/60 hover:border-cyan/50 hover:bg-[#030811]/80 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:-translate-y-1"
+              className="cursor-pointer bg-[#030811]/80 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col text-left transition-all duration-300 hover:border-cyan/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] group h-full relative overflow-hidden"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${domain.glow} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+              {/* Subtle hover background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Tag / Badge */}
+              <div className="mb-5">
+                <span className="inline-block px-4 py-1.5 text-cyan border border-cyan/40 rounded-full text-xs font-bold tracking-widest bg-cyan/5 shadow-[0_0_10px_rgba(6,182,212,0.1)]">
+                  [{domain.tag}]
+                </span>
+              </div>
               
-              <span className="text-4xl sm:text-5xl mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-300">{domain.icon}</span>
-              <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide relative z-10">{domain.name}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan transition-colors duration-300">
+                {domain.name}
+              </h3>
+              
+              <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
+                {domain.shortDesc}
+              </p>
+
+              {/* REPLACED BUTTON: Simple text command */}
+              <div className="mt-auto border-t border-white/10 pt-5 flex items-center justify-center sm:justify-start">
+                <span className="text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
+                  View Problem Statements
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -131,7 +151,7 @@ export default function Tracks() {
       {activeDomain && activeDomainData && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-100 transition-opacity duration-300">
           
-          {/* Extremely Blurred Background */}
+          {/* Blurred Background */}
           <div 
             className="absolute inset-0 bg-black/70 backdrop-blur-xl" 
             onClick={closeModal}
@@ -150,8 +170,9 @@ export default function Tracks() {
 
             {/* Modal Header */}
             <div className="text-center mb-8 relative z-10 mt-4 sm:mt-0">
-              <span className="text-4xl sm:text-6xl mb-4 block">{activeDomainData.icon}</span>
-              <span className="text-cyan font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">Problem Statements For</span>
+              <span className="inline-block px-4 py-1 text-cyan border border-cyan/40 rounded-full text-sm font-bold tracking-widest bg-cyan/5 mb-4">
+                [{activeDomainData.tag}]
+              </span>
               <h3 className="text-3xl sm:text-4xl font-black text-white">
                 {activeDomainData.name}
               </h3>
@@ -177,7 +198,6 @@ export default function Tracks() {
                         <span className="inline-block px-3 py-1 rounded-full bg-electric/20 text-cyan text-xs sm:text-sm font-mono font-bold border border-electric/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                           {problem.id}
                         </span>
-                        {/* Reveal Indicator */}
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isProblemActive ? 'bg-electric text-white shadow-[0_0_10px_rgba(14,124,196,0.8)]' : 'bg-white/5 text-gray-400'}`}>
                           <svg className={`w-5 h-5 transition-transform duration-300 ${isProblemActive ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
