@@ -1,61 +1,211 @@
+'use client';
+import { useState, useEffect } from 'react';
+
 export default function Tracks() {
-  const tracks = [
-    { id: 'AI', title: 'AI for Humanitarian Tech', desc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.', pdfPath: '/PS/AI_human.pdf' },
-    { id: 'CKTD', title: 'Circuit Design', desc: 'Embedded systems, PCB design, VLSI and hardware engineering.', pdfPath: '/PS/circuit_design.pdf' },
-    { id: 'UIT', title: 'Urban Intelligence Tech', desc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.', pdfPath: '/PS/urban_intelligence.pdf' },
-    { id: 'AERO', title: 'Aerospace', desc: 'Drones, satellite technology, navigation systems and aerospace innovation.', pdfPath: '/PS/aerospace.pdf' },
-    { id: 'MOB', title: 'Mobility', desc: 'EVs, autonomous vehicles, transportation and logistics solutions.', pdfPath: ' /PS/mobility.pdf' },
-    { id: 'CYBR', title: 'Cyber Security', desc: 'Threat detection, secure systems, ethical hacking and data privacy.', pdfPath: '' },
+  const [activeDomain, setActiveDomain] = useState<string | null>(null);
+  const [activeProblem, setActiveProblem] = useState<string | null>(null);
+
+  // Lock background scrolling when the modal is open
+  useEffect(() => {
+    if (activeDomain) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => { document.body.style.overflow = 'auto'; }; // Cleanup
+  }, [activeDomain]);
+
+  const openDomain = (domainId: string) => {
+    setActiveDomain(domainId);
+    setActiveProblem(null);
+  };
+
+  const closeModal = () => {
+    setActiveDomain(null);
+    setActiveProblem(null);
+  };
+
+  const toggleProblem = (problemId: string) => {
+    setActiveProblem(activeProblem === problemId ? null : problemId);
+  };
+
+  // Placeholder Track Data (Update with your actual 6 domains and problems)
+  const trackData = [
+    {
+      id: 'ai',
+      name: 'Artificial Intelligence',
+      icon: '🧠',
+      glow: 'from-blue-500 to-cyan-500',
+      problems: [
+        { id: 'NN-AI-01', title: 'Intelligent Traffic Optimization', desc: 'Develop a computer vision-based model that optimizes traffic light timings dynamically based on real-time vehicle density to reduce urban congestion.' },
+        { id: 'NN-AI-02', title: 'AI Healthcare Diagnostics', desc: 'Build an AI tool that analyzes medical imaging (X-rays/MRIs) to assist doctors in early anomaly detection with high accuracy.' }
+      ]
+    },
+    {
+      id: 'circuit',
+      name: 'Circuit Design',
+      icon: '⚡',
+      glow: 'from-purple-500 to-pink-500',
+      problems: [
+        { id: 'NN-CD-01', title: 'Ultra-Low Power IoT Sensor', desc: 'Design a schematic for an energy-harvesting sensor node capable of sustaining operation on solar or thermal power without battery replacement.' },
+        { id: 'NN-CD-02', title: 'Automated PCB Fault Detector', desc: 'Create a system to automatically identify short circuits, open circuits, and soldering defects in manufactured PCBs.' }
+      ]
+    },
+    {
+      id: 'cyber',
+      name: 'Cyber Security',
+      icon: '🛡️',
+      glow: 'from-emerald-400 to-cyan-500',
+      problems: [
+        { id: 'NN-CS-01', title: 'Zero-Trust Network Architecture', desc: 'Develop a lightweight zero-trust authentication protocol specifically tailored for deployment in constrained local networks.' },
+        { id: 'NN-CS-02', title: 'Ransomware Containment', desc: 'Create an automated sandboxing script that detects encryption behavior in real-time and quarantines the infected node.' }
+      ]
+    },
+    {
+      id: 'aero',
+      name: 'Aerospace & Mobility',
+      icon: '🚀',
+      glow: 'from-orange-500 to-yellow-500',
+      problems: [
+        { id: 'NN-AM-01', title: 'Autonomous Drone Navigation', desc: 'Develop an algorithm for UAVs to navigate, avoid obstacles, and map GPS-denied environments using LiDAR or optical flow.' },
+        { id: 'NN-AM-02', title: 'Smart EV Battery Management', desc: 'Design an interface and backend logic to monitor thermal states and optimize cell balancing in high-capacity EV battery packs.' }
+      ]
+    },
+    {
+      id: 'uit',
+      name: 'Urban Infrastructure',
+      icon: '🏙️',
+      glow: 'from-electric to-blue-400',
+      problems: [
+        { id: 'NN-UIT-01', title: 'Smart Waste Management', desc: 'Create an IoT-based bin monitoring system that optimizes garbage truck routing based on real-time fill-levels.' },
+        { id: 'NN-UIT-02', title: 'Dynamic Grid Load Balancing', desc: 'Propose a software solution to manage smart grid power distribution and prevent blackouts during peak urban hours.' }
+      ]
+    },
+    {
+      id: 'web',
+      name: 'Web & App Dev',
+      icon: '💻',
+      glow: 'from-neonPurple to-indigo-500',
+      problems: [
+        { id: 'NN-WEB-01', title: 'Decentralized Credential Verification', desc: 'Build a secure, tamper-proof web portal for institutions to issue and verify academic certificates using blockchain.' },
+        { id: 'NN-WEB-02', title: 'Hyper-Local Disaster Alert App', desc: 'Develop a mobile application that uses mesh networking to broadcast emergency SOS alerts when standard cellular grids fail.' }
+      ]
+    }
   ];
 
+  // Find the currently active domain data for the modal
+  const activeDomainData = trackData.find(d => d.id === activeDomain);
+
   return (
-    <section id="tracks" className="py-12 sm:py-16 relative z-10">
+    <section id="tracks" className="py-16 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 font-heading text-white">
+        
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-heading text-white">
             Hackathon <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">Tracks</span>
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto font-normal px-2">Each team must select exactly one domain track at registration.</p>
-          <p className="text-cyan text-sm sm:text-base mt-2 font-extrabold tracking-widest drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]">[ NOTE: Problem statements will be released soon ]</p>
+          <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+            Select a domain card below to explore its official problem statements.
+          </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {tracks.map((track) => (
-            /* PERFORMANCE UPDATE: Solidified mobile background, kept blur for desktop. Softened mobile shadows. */
-            <div key={track.id} className="bg-[#030811]/90 md:bg-[#030811]/60 backdrop-blur-none md:backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-cyan/50 shadow-md md:shadow-[0_0_15px_rgba(255,255,255,0.05)] md:hover:shadow-[0_0_30px_rgba(6,182,212,0.25)] transition-all duration-500 group cursor-pointer flex flex-col h-full relative overflow-hidden">
-              
-              <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-electric/10 to-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              <div className="text-cyan font-black text-xs sm:text-sm tracking-widest bg-cyan/10 border border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)] px-3 sm:px-4 py-1 sm:py-1.5 rounded-full inline-block w-max mb-4 sm:mb-6 relative z-10">
-                [{track.id}]
-              </div>
+        {/* DOMAIN CARDS GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          {trackData.map((domain) => (
+            <div 
+              key={domain.id}
+              onClick={() => openDomain(domain.id)}
+              className="cursor-pointer rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center transition-all duration-300 border border-white/10 backdrop-blur-md relative overflow-hidden group bg-[#030811]/60 hover:border-cyan/50 hover:bg-[#030811]/80 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:-translate-y-1"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${domain.glow} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
               
-              <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 font-heading tracking-wide text-white md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-white md:group-hover:to-cyan transition-all relative z-10">
-                {track.title}
-              </h3>
-              
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-grow relative z-10 mb-6">
-                {track.desc}
-              </p>
-
-              <div className="relative z-10 mt-auto pt-2 border-t border-white/5 transition-colors">
-                {track.pdfPath ? (
-                  <a href={track.pdfPath} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full bg-cyan/5 hover:bg-cyan/15 border border-cyan/30 text-cyan font-bold py-2.5 px-4 rounded-xl text-sm transition-all">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                    Download Problem
-                  </a>
-                ) : (
-                  <div className="flex items-center justify-center gap-2 w-full bg-gray-800/30 border border-gray-600/50 text-gray-400 font-semibold py-2.5 px-4 rounded-xl text-sm cursor-not-allowed">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Will be released soon
-                  </div>
-                )}
-              </div>
-              
+              <span className="text-4xl sm:text-5xl mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-300">{domain.icon}</span>
+              <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide relative z-10">{domain.name}</h3>
             </div>
           ))}
         </div>
+
       </div>
+
+      {/* --- THE MODAL OVERLAY (CENTER OF ATTRACTION) --- */}
+      {activeDomain && activeDomainData && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-100 transition-opacity duration-300">
+          
+          {/* Extremely Blurred Background */}
+          <div 
+            className="absolute inset-0 bg-black/70 backdrop-blur-xl" 
+            onClick={closeModal}
+          ></div>
+          
+          {/* Modal Content Box */}
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#030811]/95 border-2 border-cyan/50 shadow-[0_0_50px_rgba(6,182,212,0.3)] rounded-3xl p-6 sm:p-10 transform scale-100 transition-transform duration-300">
+            
+            {/* Close Button */}
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/5 hover:bg-red-500/20 text-gray-400 hover:text-red-400 p-2 rounded-full border border-transparent hover:border-red-500/50 transition-all z-20"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            {/* Modal Header */}
+            <div className="text-center mb-8 relative z-10 mt-4 sm:mt-0">
+              <span className="text-4xl sm:text-6xl mb-4 block">{activeDomainData.icon}</span>
+              <span className="text-cyan font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">Problem Statements For</span>
+              <h3 className="text-3xl sm:text-4xl font-black text-white">
+                {activeDomainData.name}
+              </h3>
+            </div>
+
+            {/* Problem Statements Grid */}
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 relative z-10">
+              {activeDomainData.problems.map((problem) => {
+                const isProblemActive = activeProblem === problem.id;
+                return (
+                  <div 
+                    key={problem.id}
+                    onClick={() => toggleProblem(problem.id)}
+                    className={`cursor-pointer rounded-2xl border transition-all duration-300 flex flex-col bg-[#030811] overflow-hidden
+                      ${isProblemActive 
+                        ? 'border-electric shadow-[0_0_20px_rgba(14,124,196,0.4)]' 
+                        : 'border-white/10 hover:border-cyan/40 hover:bg-white/5'
+                      }`}
+                  >
+                    {/* CARD FRONT: ID & TITLE */}
+                    <div className="p-5 sm:p-6 flex flex-col justify-center">
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="inline-block px-3 py-1 rounded-full bg-electric/20 text-cyan text-xs sm:text-sm font-mono font-bold border border-electric/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                          {problem.id}
+                        </span>
+                        {/* Reveal Indicator */}
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isProblemActive ? 'bg-electric text-white shadow-[0_0_10px_rgba(14,124,196,0.8)]' : 'bg-white/5 text-gray-400'}`}>
+                          <svg className={`w-5 h-5 transition-transform duration-300 ${isProblemActive ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <h4 className={`font-bold text-lg sm:text-xl md:text-2xl transition-colors pr-10 ${isProblemActive ? 'text-white' : 'text-gray-200'}`}>
+                        {problem.title}
+                      </h4>
+
+                      {/* CARD BACK / EXPANDED DESCRIPTION */}
+                      <div className={`transition-all duration-500 ease-in-out ${isProblemActive ? 'max-h-[500px] mt-4 opacity-100' : 'max-h-0 mt-0 opacity-0'}`}>
+                        <div className="pt-4 border-t border-white/10">
+                          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            {problem.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            
+          </div>
+        </div>
+      )}
     </section>
   );
 }
