@@ -50,20 +50,20 @@ export default function Navbar() {
                         {/* LEFT LOGOS */}
                         <div className="flex items-center gap-1 sm:gap-2">
                             {/* 1. BITM Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
+                            <div className="bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border sm:border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
                                 <img src="/logo/bitm.png" alt="BITM Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                             {/* 2. IEEE Bangalore Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
+                            <div className="bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border sm:border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
                                 <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                             {/* 3. Gemma Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
+                            <div className="bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border sm:border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
                                 <img src="/logo/gemma.png" alt="Gemma Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                         </div>
 
-                        {/* CENTER TEXT */}
+                        {/* CENTER TEXT (Hidden on mobile/tablet to give space to logos) */}
                         <div className="hidden xl:block text-center px-2 flex-1">
                             <Link href="/" className="font-heading md:text-2xl lg:text-3xl font-black tracking-widest block drop-shadow-[0_0_15px_rgba(14,124,196,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 hover:from-electric hover:to-cyan transition-all duration-300">
                                 NEONEXUS 36.1
@@ -72,20 +72,20 @@ export default function Navbar() {
 
                         {/* RIGHT LOGOS & MENU */}
                         <div className="flex items-center gap-1 sm:gap-2">
-                            {/* 4. IEEE YP Logo */}
-                            <div className="hidden sm:flex bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 items-center justify-center border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                            {/* 4. IEEE YP Logo (Visible on all screens now) */}
+                            <div className="flex bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/bangl_ieee1.png" alt="IEEE YP Logo" className="max-h-full max-w-full object-contain" />
                             </div>
-                            {/* 5. Smart City Logo */}
-                            <div className="hidden sm:flex bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 items-center justify-center border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                            {/* 5. Smart City Logo (Visible on all screens now) */}
+                            <div className="flex bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/smart_ieee.jpeg" alt="Smart City Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                             {/* 6. IEEE SB BITM Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl h-8 w-12 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                            <div className="bg-white p-1 sm:p-1.5 rounded-md sm:rounded-xl h-7 w-10 sm:h-10 sm:w-14 md:h-12 md:w-16 lg:h-14 lg:w-20 flex items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
                             </div>
 
-                            <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-1.5 sm:p-2 rounded-lg border border-electric/40 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all ml-1 lg:ml-2">
+                            <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-1.5 sm:p-2 rounded-md sm:rounded-lg border border-electric/40 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all ml-0.5 sm:ml-1 lg:ml-2">
                                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
