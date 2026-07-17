@@ -41,8 +41,9 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 font-heading text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">About</span> Neo-Nexus
           </h2>
+          {/* UPDATED: Removed "national" -> "multi-domain" */}
           <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 font-normal">
-            Neo-Nexus 36.1 is the second edition of the flagship national hackathon organized by IEEE Student Branch BITM and Ballari Institute of Technology and Management (BITM). Building on the legacy of Neo-Nexus 36.0, this event challenges student innovators from across India to solve real-world problems.
+            Neo-Nexus 36.1 is the second edition of the flagship multi-domain hackathon organized by IEEE Student Branch BITM and Ballari Institute of Technology and Management (BITM). Building on the legacy of Neo-Nexus 36.0, this event challenges student innovators from across India to solve real-world problems.
           </p>
 
           {/* --- NEW RESPONSIVE SLIDESHOW --- */}
@@ -115,7 +116,8 @@ export default function About() {
           </div>
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
             <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Networking</h4>
-            <p className="text-sm sm:text-base font-semibold text-gray-300">National Level</p>
+            {/* UPDATED: Removed "National Level" */}
+            <p className="text-sm sm:text-base font-semibold text-gray-300">Pan-India Reach</p>
           </div>
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-success/40 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
             <h4 className="text-success font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Certificates</h4>
