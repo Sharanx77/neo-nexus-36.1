@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="text-center max-w-6xl mx-auto w-full">
         {/* PERFORMANCE UPDATE: Removed pulse animation on mobile (md:animate-pulse) */}
         <span className="text-electric font-bold tracking-[0.2em] text-xs sm:text-sm md:text-base lg:text-lg uppercase mb-4 sm:mb-5 block md:animate-pulse">
-          National Multi-Domain Hackathon | 2nd Edition
+          Multi-Domain Hackathon | 2nd Edition
         </span>
         
         <h1 className="text-[3.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-[8.5rem] font-black sm:leading-none mb-4 sm:mb-6 tracking-tighter uppercase font-heading">
