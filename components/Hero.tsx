@@ -15,16 +15,29 @@ export default function Hero() {
           <span className="text-white md:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] block mb-2">NEO-NEXUS 36.1</span>
         </h1>
         
-        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 tracking-tight leading-snug">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 tracking-tight leading-snug">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-cyan to-neonPurple bg-[length:200%_auto] md:animate-text-shimmer">
-            The origin of what’s next.
+            The origin of what’s next...!
           </span>
         </h2>
 
-        {/* ADDED: Powered by Gemma */}
-        <div className="flex items-center justify-center gap-2 mb-8 sm:mb-10">
-          <span className="text-gray-300 text-lg sm:text-xl font-medium tracking-wide">Powered by</span>
-          <span className="text-white text-xl sm:text-2xl font-black tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">Gemma</span>
+        {/* EXACT LOGO MATCH FROM IMAGE */}
+        <div className="flex flex-col items-center justify-center gap-3 mb-10 sm:mb-14">
+          <span className="text-white text-lg sm:text-xl md:text-2xl font-bold tracking-wide drop-shadow-md">
+            Powered by
+          </span>
+          <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-14 mt-1">
+            <img 
+              src="/logo/gemma-wbg.png" 
+              alt="Gemma" 
+              className="h-10 sm:h-14 md:h-16 lg:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+            />
+            <img 
+              src="/logo/bangl_ieee1-wbg.png" 
+              alt="IEEE Young Professionals" 
+              className="h-10 sm:h-14 md:h-16 lg:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
+            />
+          </div>
         </div>
         
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-10 sm:mb-12 font-normal max-w-4xl mx-auto leading-relaxed px-2">
