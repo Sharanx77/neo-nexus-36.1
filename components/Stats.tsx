@@ -12,11 +12,11 @@ export default function Stats() {
         <span>36 Hours</span>
         <span className="hidden sm:inline text-cyan/50 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
         
-        {/* UPDATED PRIZE POOL */}
         <span className="text-gold font-black text-xl drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">1 Lakh+</span>
         <span className="hidden sm:inline text-cyan/50 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
         
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan font-black text-xl drop-shadow-[0_0_10px_rgba(14,124,196,0.4)]">National Level</span>
+        {/* REPLACED "NATIONAL LEVEL" WITH "MULTIPLE DOMAIN" */}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan font-black text-xl drop-shadow-[0_0_10px_rgba(14,124,196,0.4)]">Multiple Domain</span>
         <span className="hidden sm:inline text-cyan/50 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
         
         <span>2 to 4 Members / Team</span>
