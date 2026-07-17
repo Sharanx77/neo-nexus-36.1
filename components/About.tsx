@@ -107,7 +107,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-gold/40 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
             <h4 className="text-gold font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Prizes</h4>
-            <p className="text-sm sm:text-base font-semibold text-gray-300">50,000+</p>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">1 Lakh+</p>
           </div>
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
             <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Mentorship</h4>
