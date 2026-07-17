@@ -41,7 +41,6 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 font-heading text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">About</span> Neo-Nexus
           </h2>
-          {/* UPDATED: Removed "national" -> "multi-domain" */}
           <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 font-normal">
             Neo-Nexus 36.1 is the second edition of the flagship multi-domain hackathon organized by IEEE Student Branch BITM and Ballari Institute of Technology and Management (BITM). Building on the legacy of Neo-Nexus 36.0, this event challenges student innovators from across India to solve real-world problems.
           </p>
@@ -57,7 +56,7 @@ export default function About() {
               />
             ))}
 
-            {/* Navigation Arrows (Visible on hover on desktop, always visible on mobile) */}
+            {/* Navigation Arrows */}
             <button 
               onClick={prevSlide}
               className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-electric/80 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/20"
@@ -106,17 +105,19 @@ export default function About() {
 
         {/* Dynamic Multi-Color Neon Framed Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          
+          {/* UPDATED: Changed "Prizes" to "Prize Pool" */}
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-gold/40 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-            <h4 className="text-gold font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Prizes</h4>
+            <h4 className="text-gold font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Prize Pool</h4>
             <p className="text-sm sm:text-base font-semibold text-gray-300">1 Lakh+</p>
           </div>
+          
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
             <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Mentorship</h4>
             <p className="text-sm sm:text-base font-semibold text-gray-300">Expert Guidance</p>
           </div>
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
             <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Networking</h4>
-            {/* UPDATED: Removed "National Level" */}
             <p className="text-sm sm:text-base font-semibold text-gray-300">Pan-India Reach</p>
           </div>
           <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-success/40 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
