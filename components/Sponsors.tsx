@@ -2,14 +2,15 @@ import Link from "next/link";
 
 export default function Sponsors() {
   const sponsorsList = [
-    { logo: "/logo/bangl_ieee1.png", alt: "IEEE Bangalore Section" }, // Moved to the top
-    { logo: "/logo/bangl_ieee.jpeg", alt: "IEEE Bangalore Section (Alt)" }, // Added at the 2nd place
+    { logo: "/logo/bangl_ieee1.png", alt: "IEEE Bangalore Section" }, 
+    { logo: "/logo/bangl_ieee.jpeg", alt: "IEEE Bangalore Section (Alt)" }, 
     { logo: "/logo/mathworks.jpeg", alt: "MathWorks" },
     { logo: "/logo/coreEL.png", alt: "CoreEL" },
     { logo: "/logo/sight_ieee.png", alt: "IEEE SIGHT" },
     { logo: "/logo/smart_ieee.jpeg", alt: "IEEE Smart Village" },
     { logo: "/logo/naratech_bang.png", alt: "NaraTech" },
-    { logo: "/logo/AESSBLR.jpeg", alt: "IEEE AESS Bangalore" }
+    { logo: "/logo/AESSBLR.jpeg", alt: "IEEE AESS Bangalore" },
+    { logo: "/logo/cadence.png", alt: "Cadence" } // Added Cadence here
   ];
 
   return (
