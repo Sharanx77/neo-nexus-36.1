@@ -104,7 +104,21 @@ export default function Tracks() {
       name: 'Cyber Security',
       shortDesc: 'Threat detection, secure systems, ethical hacking and data privacy.',
       problems: [
-        { id: 'CYBR-TBA', title: 'Problem Statements To Be Announced', desc: 'The official problem statements for the Cyber Security domain will be released soon.' }
+        { 
+          id: 'CYBR-01', 
+          title: 'AI-Based Phishing URL Detection and Browser Extension for Indian Users', 
+          desc: 'Develop an AI-powered phishing URL detection system and browser extension that extracts lexical features and trains an ML classifier on India-specific datasets. The system must classify URLs in real-time as safe, suspicious, or phishing with a confidence score, alerting users via a Chrome/Firefox extension to protect against local threats like spoofed banking or government portals.' 
+        },
+        { 
+          id: 'CYBR-02', 
+          title: 'Network Intrusion Detection System Using Federated Learning for Privacy-Preserving Threat Intelligence', 
+          desc: 'Build a federated learning-based Network Intrusion Detection System (NIDS) where simulated network nodes train local anomaly detection models on their own traffic data without sharing raw records. A central aggregator combines these models using FedAvg to produce a global model, ensuring privacy-preserving threat intelligence that complies with data protection regulations.' 
+        },
+        { 
+          id: 'CYBR-03', 
+          title: 'Deepfake Detection System for Indian Regional Language Audio-Visual Content', 
+          desc: 'Develop a multimodal deepfake detection system for Indian regional language content that analyzes short video clips for facial landmark inconsistencies, lip-sync errors, and audio spectral anomalies. The system should use CNNs/Vision Transformers and audio classifiers to fuse scores for a combined confidence output, providing a web-based upload-and-detect interface to combat localized misinformation.' 
+        }
       ]
     }
   ];
