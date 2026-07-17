@@ -37,7 +37,7 @@ export default function Navbar() {
                 </nav>
 
                 <div className="p-6 border-t border-white/10 bg-transparent">
-                    <Link href="https://www.evynte.com/event/checkout/neo-nexus-361" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.4)]">
+                    <Link href="https://forms.gle/B1VFdsEG327MR2xs8" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.4)]">
                         Register Now
                     </Link>
                 </div>
@@ -54,7 +54,7 @@ export default function Navbar() {
                             </div>
                             {/* 2. IEEE Bangalore Logo */}
                             <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
-                                <img src="/logo/bangl_ieee.jpeg" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
+                                <img src="/logo/bangl_ieee.png" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
                             </div>
                         </div>
 
