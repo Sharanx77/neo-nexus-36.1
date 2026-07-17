@@ -29,7 +29,7 @@ export default function Hero() {
         
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10">
           <div className="bg-[#030811]/90 md:bg-[#030811]/70 backdrop-blur-none md:backdrop-blur-md px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-electric/50 shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.2)]">
-            <span className="font-extrabold text-sm sm:text-base tracking-widest text-electric uppercase">22nd & 23rd August 2026</span>
+            <span className="font-extrabold text-sm sm:text-base tracking-widest text-electric uppercase">25th & 26th July 2026</span>
           </div>
           <div className="bg-[#030811]/90 md:bg-[#030811]/70 backdrop-blur-none md:backdrop-blur-md px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-cyan/50 shadow-md md:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
             <span className="font-extrabold text-sm sm:text-base tracking-widest text-white uppercase">IEEE SB, BITM Ballari</span>
