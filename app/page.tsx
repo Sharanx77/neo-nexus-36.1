@@ -4,8 +4,8 @@ import Stats from "../components/Stats";
 // Removed Stats since they are now beautifully integrated into the About section!
 import About from "../components/About";
 import Tracks from "../components/Tracks";
-import Timeline from "../components/Timeline";
 import Winners from "../components/Winners";
+import Venue from "../components/Venue";
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
 import Contact from "../components/Contact";
@@ -19,10 +19,9 @@ export default function Home() {
         <Hero />
         <Stats/>
         <About />
-        <Winners/>
-        
+        <Winners/> 
         <Tracks />
-        <Timeline />
+        <Venue/>
         <Sponsors />
         <Host />
         <Contact />
