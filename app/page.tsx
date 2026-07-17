@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Stats from "../components/stats";
+import Stats from "../components/Stats";
 // Removed Stats since they are now beautifully integrated into the About section!
 import About from "../components/About";
 import Tracks from "../components/Tracks";
