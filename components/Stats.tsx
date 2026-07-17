@@ -18,17 +18,18 @@ export default function Stats() {
             
             <span className="whitespace-nowrap">6 Domains</span>
             
-            <span className="text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
+            {/* Added hidden sm:inline to vanish on mobile */}
+            <span className="hidden sm:inline text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
             
             <span className="whitespace-nowrap">36 Hours</span>
             
-            <span className="text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
+            <span className="hidden sm:inline text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
             
             <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan font-black text-sm md:text-lg drop-shadow-[0_0_10px_rgba(14,124,196,0.4)]">
               Multiple Domain
             </span>
             
-            <span className="text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
+            <span className="hidden sm:inline text-cyan/60 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]">✦</span>
             
             <span className="whitespace-nowrap">2-4 Members/Team</span>
 
