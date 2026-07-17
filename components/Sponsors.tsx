@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Sponsors() {
   const sponsorsList = [
-    { logo: "/logo/bangl_ieee.jpeg", alt: "IEEE Bangalore Section" }, // Moved to the top
+    { logo: "/logo/bangl_ieee.png", alt: "IEEE Bangalore Section" }, // Moved to the top
     { logo: "/logo/mathworks.jpeg", alt: "MathWorks" },
     { logo: "/logo/coreEL.png", alt: "CoreEL" },
     { logo: "/logo/sight_ieee.png", alt: "IEEE SIGHT" },
