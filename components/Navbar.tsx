@@ -1,85 +1,155 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
-export default function Navbar() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+export default function About() {
+  // Array of your hackathon memory images
+  const images = [
+    "/NN36.0/1.jpg",
+    "/NN36.0/3.jpg",
+    "/NN36.0/4.jpg",
+    "/NN36.0/5.jpg",
+    "/NN36.0/6.jpg"
+  ];
 
-    useEffect(() => {
-        if (isSidebarOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [isSidebarOpen]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    return (
-        <>
-            <div className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100 block' : 'opacity-0 pointer-events-none'}`} onClick={toggleSidebar}></div>
+  // Auto-play effect: Changes image every 3.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(timer); // Cleanup on unmount
+  }, [images.length]);
 
-            <aside className={`fixed top-0 right-0 h-full w-72 sm:w-80 bg-[#030811]/95 md:bg-[#030811]/90 backdrop-blur-none md:backdrop-blur-xl border-l border-electric/40 z-50 transform transition-transform duration-300 shadow-[-10px_0_30px_rgba(14,124,196,0.2)] flex flex-col ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                <div className="p-6 border-b border-white/10 flex justify-between items-center bg-transparent">
-                    <span className="text-white font-heading font-bold text-xl tracking-wider">NEO-NEXUS <span className="text-electric">36.1</span></span>
-                    <button onClick={toggleSidebar} className="text-gray-400 hover:text-red-500 transition-colors p-1.5 bg-white/5 rounded-lg border border-white/10 hover:border-red-500/50">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                </div>
+  // Manual controls
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
 
-                <nav className="flex-1 overflow-y-auto py-6 px-4 flex flex-col space-y-2 scrollbar-hide">
-                    <Link href="#home" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Home</Link>
-                    <Link href="#about" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">About</Link>
-                    <Link href="#tracks" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Tracks</Link>
-                    <Link href="#timeline" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Timeline</Link>
-                    <Link href="#sponsors" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Sponsors</Link>
-                    <Link href="#host" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Host Institution</Link>
-                    <Link href="#contact" onClick={toggleSidebar} className="px-4 py-3 text-gray-300 hover:text-white hover:bg-electric/20 border border-transparent hover:border-electric/30 rounded-xl transition-all font-semibold flex items-center">Contact</Link>
-                </nav>
+  return (
+    <section id="about" className="py-12 sm:py-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Section Banner */}
+        <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-10 md:p-16 rounded-3xl border border-electric/30 shadow-[0_0_25px_rgba(14,124,196,0.1)] mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 font-heading text-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">About</span> Neo-Nexus
+          </h2>
+          <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 font-normal">
+            Neo-Nexus 36.1 is the second edition of the flagship national hackathon organized by IEEE Student Branch BITM and Ballari Institute of Technology and Management (BITM). Building on the legacy of Neo-Nexus 36.0, this event challenges student innovators from across India to solve real-world problems.
+          </p>
 
-                <div className="p-6 border-t border-white/10 bg-transparent">
-                    <Link href="https://www.evynte.com/event/checkout/neo-nexus-361" target="_blank" rel="noopener noreferrer" onClick={toggleSidebar} className="block w-full text-center bg-gradient-to-r from-electric to-cyan hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-3 rounded-xl font-bold transition-all shadow-md md:shadow-[0_0_15px_rgba(14,124,196,0.4)]">
-                        Register Now
-                    </Link>
-                </div>
-            </aside>
+          {/* --- NEW RESPONSIVE SLIDESHOW --- */}
+          <div className="relative mb-6 sm:mb-8 w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)] group">
+            {images.map((img, index) => (
+              <img 
+                key={index}
+                src={img} 
+                alt={`Neo-Nexus 36.0 Memory ${index + 1}`} 
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+              />
+            ))}
 
-            <nav className="fixed top-0 w-full z-30 bg-[#030811]/95 md:bg-[#030811]/85 backdrop-blur-none md:backdrop-blur-md border-b border-electric/40 shadow-lg md:shadow-[0_5px_20px_rgba(14,124,196,0.15)] py-2 sm:py-3 transition-colors">
-                <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-                    <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-1 md:gap-6">
-                        
-                        <div className="flex items-center gap-1 sm:gap-2">
-                            {/* 1. BITM Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
-                                <img src="/logo/bitm.png" alt="BITM Logo" className="max-h-full max-w-full object-contain" />
-                            </div>
-                            {/* 2. IEEE Bangalore Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-electric/30 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)]">
-                                <img src="/logo/bangl_ieee.png" alt="IEEE Bangalore Logo" className="max-h-full max-w-full object-contain" />
-                            </div>
-                        </div>
+            {/* Navigation Arrows (Visible on hover on desktop, always visible on mobile) */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-electric/80 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/20"
+            >
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-electric/80 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/20"
+            >
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
+            </button>
 
-                        <div className="hidden md:block text-center px-2 flex-1">
-                            <Link href="/" className="font-heading md:text-2xl lg:text-3xl font-black tracking-widest block drop-shadow-[0_0_15px_rgba(14,124,196,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 hover:from-electric hover:to-cyan transition-all duration-300">
-                                NEONEXUS 36.1
-                            </Link>
-                        </div>
+            {/* Tracking Dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+              {images.map((_, index) => (
+                <button 
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`transition-all duration-300 rounded-full ${index === currentIndex ? 'w-6 sm:w-8 h-2 sm:h-2.5 bg-cyan shadow-[0_0_10px_rgba(6,182,212,0.8)]' : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/50 hover:bg-white/80'}`}
+                />
+              ))}
+            </div>
+          </div>
+          {/* --- END SLIDESHOW --- */}
 
-                        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
-                            {/* 3. IEEE SB BITM Logo */}
-                            <div className="bg-white p-1 sm:p-1.5 lg:p-2 rounded-lg sm:rounded-xl h-9 w-14 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-28 flex items-center justify-center border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
-                                <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
-                            </div>
+          <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-8 sm:mb-10">
+            <strong className="text-white font-bold">Our Mission:</strong> Empower student innovators to solve real-world multi-domain challenges.
+          </p>
 
-                            <button onClick={toggleSidebar} className="bg-[#030811]/80 hover:bg-electric/20 text-white hover:text-cyan p-1.5 sm:p-2.5 rounded-lg border border-electric/40 shadow-sm md:shadow-[0_0_10px_rgba(14,124,196,0.2)] transition-all">
-                                <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center border-t border-white/10 pt-8 sm:pt-10">
+            <div>
+              <span className="block text-4xl sm:text-5xl font-black text-white mb-1 sm:mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">200+</span>
+              <span className="text-xs sm:text-sm text-gray-400 font-extrabold uppercase tracking-widest">Registrations</span>
+            </div>
+            <div>
+              <span className="block text-4xl sm:text-5xl font-black text-white mb-1 sm:mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">40+</span>
+              <span className="text-xs sm:text-sm text-gray-400 font-extrabold uppercase tracking-widest">Teams Shortlisted</span>
+            </div>
+            <div>
+              <span className="block text-4xl sm:text-5xl font-black text-white mb-1 sm:mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">15+</span>
+              <span className="text-xs sm:text-sm text-gray-400 font-extrabold uppercase tracking-widest">Colleges</span>
+            </div>
+          </div>
+        </div>
 
-                    </div>
-                </div>
-            </nav>
-        </>
-    );
+        {/* Dynamic Multi-Color Neon Framed Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-gold/40 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+            <h4 className="text-gold font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Prizes</h4>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">1 Lakh+</p>
+          </div>
+          <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
+            <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Mentorship</h4>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">Expert Guidance</p>
+          </div>
+          <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.1)]">
+            <h4 className="text-electric font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Networking</h4>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">National Level</p>
+          </div>
+          <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-success/40 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+            <h4 className="text-success font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Certificates</h4>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">For all participants</p>
+          </div>
+          <div className="bg-[#030811]/60 backdrop-blur-md p-5 sm:p-6 rounded-2xl text-center border border-neonPurple/40 shadow-[0_0_15px_rgba(168,85,247,0.1)] sm:col-span-2 lg:col-span-1">
+            <h4 className="text-neonPurple font-bold text-base sm:text-lg mb-1 sm:mb-2 font-heading uppercase tracking-wider">Industry Connect</h4>
+            <p className="text-sm sm:text-base font-semibold text-gray-300">Top Tech Leaders</p>
+          </div>
+        </div>
+
+        {/* --- VIDEO SECTION --- */}
+        <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-electric/30 shadow-[0_0_25px_rgba(14,124,196,0.1)] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-cyan"></div>
+          
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6 sm:mb-8 font-heading text-center text-white">
+            Neo-Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">36.0</span>
+          </h3>
+          
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)] group">
+            <video 
+              src="/NN36.0/NN36video.mp4" 
+              poster="/NN36.0/screen.png" 
+              controls 
+              muted 
+              className="w-full h-full object-cover"
+            >
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-cyan/30 rounded-2xl transition-colors pointer-events-none"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
 }
