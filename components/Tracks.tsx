@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Tracks() {
   const [activeDomain, setActiveDomain] = useState<string | null>(null);
@@ -162,13 +163,24 @@ export default function Tracks() {
                   {domain.shortDesc}
                 </p>
 
-                <div className="mt-auto border-t border-white/10 pt-4 flex items-center justify-center sm:justify-start">
+                {/* FOOTER WITH DYNAMIC LINK */}
+                <div className="mt-auto border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
                     View Problem Statements
                     <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
+                  
+                  <Link 
+                    href="https://www.evynte.com/event/checkout/neo-nexus-361" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} 
+                    className="w-full sm:w-auto text-center bg-electric/20 hover:bg-electric text-white border border-electric/50 px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors shadow-[0_0_10px_rgba(14,124,196,0.2)] hover:shadow-[0_0_20px_rgba(14,124,196,0.5)] z-10 relative"
+                  >
+                    Register Now
+                  </Link>
                 </div>
               </div>
             ))}
