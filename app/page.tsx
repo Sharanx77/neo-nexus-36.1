@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Stats from "../components/stats";
 // Removed Stats since they are now beautifully integrated into the About section!
 import About from "../components/About";
 import Tracks from "../components/Tracks";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main className="overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scrolling issues */}
         <Hero />
+        <Stats/>
         <About />
         <Winners/>
         
