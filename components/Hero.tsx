@@ -64,8 +64,8 @@ export default function Hero() {
           <Link href="#tracks" className="w-full sm:w-auto bg-[#030811]/80 md:bg-[#030811]/60 backdrop-blur-none md:backdrop-blur-md hover:bg-white/10 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all border border-gray-500 hover:border-electric md:hover:shadow-[0_0_20px_rgba(14,124,196,0.3)] text-center">
             Explore Tracks
           </Link>
-          <a href="/NeoNexus-36.1-Voucher.pdf" download className="w-full sm:w-auto bg-[#030811]/80 md:bg-[#030811]/60 backdrop-blur-none md:backdrop-blur-md hover:bg-white/10 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all border border-gray-500 hover:border-electric md:hover:shadow-[0_0_20px_rgba(14,124,196,0.3)] text-center">
-            Download Voucher
+          <a href="/NeoNexus-36.1-Brochure.pdf" download className="w-full sm:w-auto bg-[#030811]/80 md:bg-[#030811]/60 backdrop-blur-none md:backdrop-blur-md hover:bg-white/10 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-lg sm:text-xl tracking-wide transition-all border border-gray-500 hover:border-electric md:hover:shadow-[0_0_20px_rgba(14,124,196,0.3)] text-center">
+            Download Brochure
           </a>
         </div>
       </div>
