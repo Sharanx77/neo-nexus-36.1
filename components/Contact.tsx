@@ -12,20 +12,20 @@ export default function Contact() {
         {/* UPDATED: Changed to a 3-column grid for a perfectly balanced layout without the form */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           
-          {/* Coordinator 1 */}
+          {/* Event Coordinator */}
           <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.15)] flex flex-col justify-center hover:border-electric/70 transition-colors">
-            <span className="text-electric text-[10px] sm:text-xs font-bold tracking-widest uppercase block mb-1">Event Coordinator 1</span>
+            <span className="text-electric text-[10px] sm:text-xs font-bold tracking-widest uppercase block mb-1">Event Coordinator</span>
+            <p className="text-white font-extrabold text-xl sm:text-2xl mb-1">Dr Abdul Lateef Haroon P S</p>
+            <p className="text-gray-300 text-sm sm:text-base font-mono font-semibold mb-0.5">+91 9738973034</p>
+            <p className="text-gray-300 text-sm sm:text-base font-medium break-all">abdulbitm@ieee.org</p>
+          </div>
+
+          {/* Event Volunteer */}
+          <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.15)] flex flex-col justify-center hover:border-electric/70 transition-colors">
+            <span className="text-electric text-[10px] sm:text-xs font-bold tracking-widest uppercase block mb-1">Event Volunteer</span>
             <p className="text-white font-extrabold text-xl sm:text-2xl mb-1">A Ananda</p>
             <p className="text-gray-300 text-sm sm:text-base font-mono font-semibold mb-0.5">+91 8105793874</p>
             <p className="text-gray-300 text-sm sm:text-base font-medium break-all">ananda.a@ieee.org</p>
-          </div>
-          
-          {/* Coordinator 2 */}
-          <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.15)] flex flex-col justify-center hover:border-electric/70 transition-colors">
-            <span className="text-electric text-[10px] sm:text-xs font-bold tracking-widest uppercase block mb-1">Event Coordinator 2</span>
-            <p className="text-white font-extrabold text-xl sm:text-2xl mb-1">Sanchith Kumar Joshi</p>
-            <p className="text-gray-300 text-sm sm:text-base font-mono font-semibold mb-0.5">+91 9686004644</p>
-            <p className="text-gray-300 text-sm sm:text-base font-medium break-all">joshisanchith@gmail.com</p>
           </div>
 
           {/* General & Sponsorships Panel */}
