@@ -60,20 +60,6 @@ export default function Tracks() {
       ]
     },
     {
-      id: 'uit',
-      tag: 'UIT',
-      name: 'Urban Intelligence Tech',
-      shortDesc: 'Urban planning algorithms, IoT networks, and sustainable infrastructure.',
-      problems: [
-        { id: 'UIT-01', title: 'Al-Powered Pothole Detection with Automated Municipal Ward Routing ', desc: 'Develop an Al-powered Crowdsourced Pothole Detection and Civic Complaint System that uses smartphone accelerometer/GPS or dashcam images to detect and classify pothole severity, automatically geotags locations, routes complaints to the correct municipal ward using geofenced boundaries, provides a heatmap dashboard with SLA tracking, and predicts future pothole formation using weather, traffic, and maintenance data. ' },
-        { id: 'UIT-02', title: 'Predictive Water Network Leak Detection for AMRUT Urban Distribution Systems ', desc: 'Develop an Al-based Water Leak Detection System that analyzes pressure and flow sensor data (EPANET/BATADAL) using LSTM Autoencoder or Isolation Forest to detect and locate water leaks through pressure gradient analysis. The system provides an operator dashboard with network topology, alert history, and leakage location, estimates daily Non-Revenue Water (NRW) loss, and reports model performance metrics (Precision, Recall, F1-score). ' },
-        { id: 'UIT-03', title: 'Adaptive Smart Street Lighting Network with Predictive Failure Intelligence ', desc: 'Develop a Smart Street Lighting System with PIR and LDR-based adaptive dimming, luminaire health monitoring (current sensing and lifespan estimation), and LoRa/NB-IoT communication to a central dashboard. The system uses ML (LSTM/time-series clustering) to predict light failures up to 7 days in advance, optimizes city-wide energy consumption, and includes a hardware prototype, predictive analytics, and an energy savings dashboard. ' },
-        { id: 'UIT-04', title: 'Waterlogging Prediction & Citizen Navigation System ', desc: 'Develop a Hyperlocal Urban Hyperlocal Urban Waterlogging Prediction and Navigation System that uses IMD rainfall forecasts, drain capacity, and road elevation data to predict ward-level waterlogging risk 2-6 hours in advance using Random Forest/LSTM models. The system provides a risk heatmap, safe route navigation avoiding flooded areas, and sends WhatsApp/push alerts to subscribed users through a citizen-facing web/mobile app. ' },
-        { id: 'UIT-05', title: 'Lightweight Digital Twin Dashboard for Smart City Zone Infrastructure Monitoring ', desc: 'Develop a Smart City Digital Twin Dashboard for a 1-2 sq km urban area that integrates at least three real or simulated data streams (e.g., traffic, AQI, energy, streetlights, water pressure) into a 2D/3D real-time geospatial visualization. The system provides rule-based alerts, what-if scenario simulations (e.g., road closure impact), and exportable incident reports for improved urban decision-making. ' },
-        { id: 'UIT-06', title: 'Multi-Asset Urban Infrastructure Failure Prediction Engine with 30-Day Advance Warning ', desc: 'Develop an Al-based Multi-Asset Predictive Maintenance Platform that analyzes heterogeneous infrastructure data (roads, transformers, streetlights, drains) using LSTM/Isolation Forest models to predict 30-day asset failure probabilities with confidence intervals. The system provides a city-wide asset risk map, automatically generates prioritized maintenance work orders, and optimizes crew routing for efficient infrastructure management. ' }
-      ]
-    },
-    {
       id: 'aero',
       tag: 'AERO',
       name: 'Aerospace',
@@ -124,13 +110,77 @@ export default function Tracks() {
     }
   ];
 
-  const activeDomainData = trackData.find(d => d.id === activeDomain);
+  const gemmaTracks = [
+    {
+      id: 'gemma-cities',
+      tag: 'GEMMA',
+      name: 'AI for Sustainable Cities',
+      shortDesc: 'Build AI solutions that create smarter, safer, greener, and more connected cities using Gemma models .',
+      problems: [
+        { id: 'FOCUS-01', title: 'Smart Mobility & Traffic Management' },
+        { id: 'FOCUS-02', title: 'Public Services & Citizen Engagement' },
+        { id: 'FOCUS-03', title: 'Urban Planning & Infrastructure' },
+        { id: 'FOCUS-04', title: 'Waste & Water Management' },
+        { id: 'FOCUS-05', title: 'Energy & Environmental Sustainability' },
+        { id: 'FOCUS-06', title: 'Disaster Management & Emergency Response' },
+        { id: 'FOCUS-07', title: 'Smart Governance & Civic Tech' }
+      ]
+    },
+    {
+      id: 'gemma-cyber',
+      tag: 'GEMMA',
+      name: 'AI for Cyber Security',
+      shortDesc: 'Develop AI-powered solutions that enhance digital security, privacy, and cyber resilience.',
+      problems: [
+        { id: 'FOCUS-01', title: 'Threat Detection & Incident Response' },
+        { id: 'FOCUS-02', title: 'Phishing & Fraud Detection' },
+        { id: 'FOCUS-03', title: 'Malware Analysis' },
+        { id: 'FOCUS-04', title: 'Security Operations (SOC) Automation' },
+        { id: 'FOCUS-05', title: 'Identity & Access Management' },
+        { id: 'FOCUS-06', title: 'Privacy & Data Protection' },
+        { id: 'FOCUS-07', title: 'Secure Coding & Developer Security Tools' }
+      ]
+    },
+    {
+      id: 'gemma-edu',
+      tag: 'GEMMA',
+      name: 'AI for Education',
+      shortDesc: 'Create AI applications that make learning more personalized, accessible, and engaging.',
+      problems: [
+        { id: 'FOCUS-01', title: 'AI Tutors & Personalized Learning' },
+        { id: 'FOCUS-02', title: 'Student Assessment & Feedback' },
+        { id: 'FOCUS-03', title: 'Language Learning' },
+        { id: 'FOCUS-04', title: 'Accessibility & Inclusive Education' },
+        { id: 'FOCUS-05', title: 'Teacher Productivity Tools' },
+        { id: 'FOCUS-06', title: 'Career Guidance & Skill Development' },
+        { id: 'FOCUS-07', title: 'Lifelong Learning' }
+      ]
+    },
+    {
+      id: 'gemma-human',
+      tag: 'GEMMA',
+      name: 'AI for Humanitarian Tech',
+      shortDesc: 'Develop AI solutions that improve lives and address pressing societal challenges.',
+      problems: [
+        { id: 'FOCUS-01', title: 'Healthcare & Public Health' },
+        { id: 'FOCUS-02', title: 'Disaster Relief & Crisis Response' },
+        { id: 'FOCUS-03', title: 'Accessibility & Assistive Technology' },
+        { id: 'FOCUS-04', title: 'Mental Health & Well-being' },
+        { id: 'FOCUS-05', title: 'Agriculture & Food Security' },
+        { id: 'FOCUS-06', title: 'Financial Inclusion' },
+        { id: 'FOCUS-07', title: 'Climate Action & Social Impact' }
+      ]
+    }
+  ];
+
+  const activeDomainData = [...trackData, ...gemmaTracks].find(d => d.id === activeDomain);
 
   return (
     <>
       <section id="tracks" className="py-12 sm:py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
+          {/* SECTION 1: Standard Hackathon Tracks */}
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 font-heading text-white">
               Hackathon <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">Tracks</span>
@@ -140,7 +190,7 @@ export default function Tracks() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24">
             {trackData.map((domain) => (
               <div 
                 key={domain.id}
@@ -163,7 +213,6 @@ export default function Tracks() {
                   {domain.shortDesc}
                 </p>
 
-                {/* FOOTER WITH DYNAMIC LINK */}
                 <div className="mt-auto border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
                     View Problem Statements
@@ -186,9 +235,94 @@ export default function Tracks() {
             ))}
           </div>
 
+          {/* SECTION 2: Build with Gemma Tracks */}
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 font-heading text-white">
+              Build with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3186FF] to-[#4FA0FF]">Gemma</span> Tracks
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-2">
+              Build innovative AI solutions powered by Gemma 4, Google's family of open models .
+            </p>
+            <p className="text-gray-500 text-xs font-medium">
+              Gemma is a trademark of Google LLC .
+            </p>
+          </div>
+
+          {/* Gemma Cards Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-12">
+            {gemmaTracks.map((domain) => (
+              <div 
+                key={domain.id}
+                onClick={() => openDomain(domain.id)}
+                className="cursor-pointer bg-[#030811]/80 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col text-left transition-all duration-300 hover:border-[#3186FF]/50 hover:shadow-[0_0_25px_rgba(49,134,255,0.15)] group h-full relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#3186FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 text-[#3186FF] border border-[#3186FF]/40 rounded-full text-[10px] sm:text-xs font-bold tracking-widest bg-[#3186FF]/5 shadow-[0_0_10px_rgba(49,134,255,0.1)]">
+                    [{domain.tag}]
+                  </span>
+                </div>
+                
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-[#4FA0FF] transition-colors duration-300">
+                  {domain.name}
+                </h3>
+                
+                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
+                  {domain.shortDesc}
+                </p>
+
+                <div className="mt-auto border-t border-white/10 pt-5 flex flex-col gap-4">
+                  <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-[#3186FF] group-hover:text-white transition-colors flex items-center justify-between">
+                    View Focus Areas
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                  
+                  <Link 
+                    href="https://www.evynte.com/event/checkout/neo-nexus-361" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} 
+                    className="w-full text-center bg-[#3186FF]/20 hover:bg-[#3186FF] text-white border border-[#3186FF]/50 px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors shadow-[0_0_10px_rgba(49,134,255,0.2)] hover:shadow-[0_0_20px_rgba(49,134,255,0.5)] z-10 relative"
+                  >
+                    Register Now
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* --- REDUCED GUIDELINES & REQUIREMENT BLOCK MOVED AFTER TRACKS --- */}
+          <div className="max-w-5xl mx-auto bg-[#030811]/60 backdrop-blur-md border border-[#3186FF]/30 p-5 sm:p-6 rounded-2xl shadow-[0_0_20px_rgba(49,134,255,0.05)]">
+            <h3 className="text-white text-sm sm:text-base font-bold uppercase tracking-wider mb-4 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
+              <span className="text-[#3186FF]">⚡</span> Gemma Track Requirements & Guidelines
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
+              <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
+                <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">1. Model Integration</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Must actively deploy Gemma models via prompting, RAG, or fine-tuning pipelines .</p>
+              </div>
+              <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
+                <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">2. Target Impact</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Solutions must present creative and structurally effective approaches to problem solving .</p>
+              </div>
+              <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
+                <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">3. Working Prototype</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Evaluations depend entirely on live runtime stability and production repository checks .</p>
+              </div>
+              <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
+                <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">4. Deliverables</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Requires a concise Kaggle write-up submission along with an architectural walk-through video .</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
+      {/* MODAL FOR TRACK DETAILS */}
       {activeDomain && activeDomainData && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 opacity-100 transition-opacity duration-300">
           
@@ -197,7 +331,7 @@ export default function Tracks() {
             onClick={closeModal}
           ></div>
           
-          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#030811]/95 border-2 border-cyan/50 shadow-[0_0_50px_rgba(6,182,212,0.3)] rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 transform scale-100 transition-transform duration-300">
+          <div className={`relative w-full max-w-3xl max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#030811]/95 border-2 shadow-[0_0_50px_rgba(6,182,212,0.3)] rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 transform scale-100 transition-transform duration-300 ${activeDomainData.tag === 'GEMMA' ? 'border-[#3186FF]/50 shadow-[0_0_50px_rgba(49,134,255,0.3)]' : 'border-cyan/50 shadow-[0_0_50px_rgba(6,182,212,0.3)]'}`}>
             
             <button 
               onClick={closeModal}
@@ -207,51 +341,70 @@ export default function Tracks() {
             </button>
 
             <div className="text-center mb-6 sm:mb-8 relative z-10 mt-3 sm:mt-0">
-              <span className="inline-block px-3 py-1 text-cyan border border-cyan/40 rounded-full text-[10px] sm:text-xs font-bold tracking-widest bg-cyan/5 mb-3">
+              <span className={`inline-block px-3 py-1 border rounded-full text-[10px] sm:text-xs font-bold tracking-widest mb-3 ${activeDomainData.tag === 'GEMMA' ? 'text-[#3186FF] border-[#3186FF]/40 bg-[#3186FF]/5' : 'text-cyan border-cyan/40 bg-cyan/5'}`}>
                 [{activeDomainData.tag}]
               </span>
               <h3 className="text-2xl sm:text-3xl font-black text-white">
                 {activeDomainData.name}
               </h3>
+              {activeDomainData.tag === 'GEMMA' && (
+                <p className="text-gray-400 mt-2 text-sm">Review the focus areas below to guide your Gemma 4 powered solution.</p>
+              )}
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:gap-5 relative z-10">
-              {activeDomainData.problems.map((problem) => {
+              {activeDomainData.problems.map((problem: any) => {
+                const hasDesc = !!problem.desc;
                 const isProblemActive = activeProblem === problem.id;
+                const isGemma = activeDomainData.tag === 'GEMMA';
+                
                 return (
                   <div 
                     key={problem.id}
-                    onClick={() => toggleProblem(problem.id)}
-                    className={`cursor-pointer rounded-xl sm:rounded-2xl border transition-all duration-300 flex flex-col bg-[#030811] overflow-hidden
-                      ${isProblemActive 
-                        ? 'border-electric shadow-[0_0_20px_rgba(14,124,196,0.4)]' 
-                        : 'border-white/10 hover:border-cyan/40 hover:bg-white/5'
+                    onClick={() => hasDesc && toggleProblem(problem.id)}
+                    className={`${hasDesc ? 'cursor-pointer' : 'cursor-default'} rounded-xl sm:rounded-2xl border transition-all duration-300 flex flex-col bg-[#030811] overflow-hidden
+                      ${(isProblemActive && hasDesc) 
+                        ? (isGemma ? 'border-[#3186FF] shadow-[0_0_20px_rgba(49,134,255,0.4)]' : 'border-electric shadow-[0_0_20px_rgba(14,124,196,0.4)]') 
+                        : (isGemma ? 'border-white/10 hover:border-[#3186FF]/40 hover:bg-white/5' : 'border-white/10 hover:border-cyan/40 hover:bg-white/5')
                       }`}
                   >
-                    <div className="p-4 sm:p-5 flex flex-col justify-center">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full bg-electric/20 text-cyan text-[10px] sm:text-xs font-mono font-bold border border-electric/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                    {hasDesc ? (
+                      // STANDARD TRACK: Interactive Accordion
+                      <div className="p-4 sm:p-5 flex flex-col justify-center">
+                        <div className="flex justify-between items-start mb-2">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-electric/20 text-cyan text-[10px] sm:text-xs font-mono font-bold border border-electric/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                            {problem.id}
+                          </span>
+                          <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-colors ${isProblemActive ? 'bg-electric text-white shadow-[0_0_10px_rgba(14,124,196,0.8)]' : 'bg-white/5 text-gray-400'}`}>
+                            <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isProblemActive ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        <h4 className={`font-bold text-base sm:text-lg transition-colors pr-8 ${isProblemActive ? 'text-white' : 'text-gray-200'}`}>
+                          {problem.title}
+                        </h4>
+
+                        <div className={`transition-all duration-500 ease-in-out ${isProblemActive ? 'max-h-[500px] mt-3 opacity-100' : 'max-h-0 mt-0 opacity-0'}`}>
+                          <div className="pt-3 border-t border-white/10">
+                            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">
+                              {problem.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      // GEMMA TRACK: Simple Point Focus Area
+                      <div className="p-3 sm:p-4 flex items-center gap-3 sm:gap-4">
+                        <span className="shrink-0 inline-block px-2.5 py-0.5 rounded-full bg-[#3186FF]/20 text-[#4FA0FF] text-[10px] sm:text-xs font-mono font-bold border border-[#3186FF]/30 shadow-[0_0_10px_rgba(49,134,255,0.2)]">
                           {problem.id}
                         </span>
-                        <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-colors ${isProblemActive ? 'bg-electric text-white shadow-[0_0_10px_rgba(14,124,196,0.8)]' : 'bg-white/5 text-gray-400'}`}>
-                          <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isProblemActive ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </div>
+                        <h4 className="font-bold text-sm sm:text-base text-gray-200">
+                          {problem.title}
+                        </h4>
                       </div>
-                      
-                      <h4 className={`font-bold text-base sm:text-lg transition-colors pr-8 ${isProblemActive ? 'text-white' : 'text-gray-200'}`}>
-                        {problem.title}
-                      </h4>
-
-                      <div className={`transition-all duration-500 ease-in-out ${isProblemActive ? 'max-h-[500px] mt-3 opacity-100' : 'max-h-0 mt-0 opacity-0'}`}>
-                        <div className="pt-3 border-t border-white/10">
-                          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">
-                            {problem.desc}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
