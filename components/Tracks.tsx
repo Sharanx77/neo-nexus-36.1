@@ -67,18 +67,28 @@ export default function Tracks() {
       problems: [
         { 
           id: 'CYBR-01', 
-          title: 'AI-Based Phishing URL Detection and Browser Extension for Indian Users', 
-          desc: 'Develop an AI-powered phishing URL detection system and browser extension that extracts lexical features and trains an ML classifier on India-specific datasets. The system must classify URLs in real-time as safe, suspicious, or phishing with a confidence score, alerting users via a Chrome/Firefox extension to protect against local threats like spoofed banking or government portals.' 
+          title: 'Detection and Prevention of Exam Paper Leaks Across Digital Platforms', 
+          desc: 'Design and develop an intelligent system capable of detecting, verifying, and alerting authorities about potential exam paper leaks at the earliest possible stage. The solution should help examination authorities identify suspicious content, prioritize credible reports, preserve digital evidence, and respond rapidly before the leaked material spreads extensively. Develop a digital forensics platform that enables authorized investigators to analyze leaked documents, correlate evidence, reconstruct the leak\'s spread, and identify the most probable source based on available digital evidence. The solution should strengthen investigation capabilities while respecting legal processes, privacy, and encryption rather than attempting to defeat them.' 
         },
         { 
           id: 'CYBR-02', 
-          title: 'Network Intrusion Detection System Using Federated Learning for Privacy-Preserving Threat Intelligence', 
-          desc: 'Build a federated learning-based Network Intrusion Detection System (NIDS) where simulated network nodes train local anomaly detection models on their own traffic data without sharing raw records. A central aggregator combines these models using FedAvg to produce a global model, ensuring privacy-preserving threat intelligence that complies with data protection regulations.' 
+          title: 'Third-Party Vendor Risk Detection and Supply Chain Attack Prevention', 
+          desc: 'Design an AI-powered platform that continuously assesses vendor security posture, detects suspicious activities originating from third-party access, identifies compromised vendor accounts, and provides real-time risk assessment and incident response recommendations. The solution should help organizations reduce supply chain risks before attackers can compromise critical systems. Develop an AI-powered vendor security platform that helps organizations identify risky third-party access, detect compromised vendor accounts, monitor anomalous behavior, and support rapid incident response. The solution should strengthen supply chain security by enabling continuous risk assessment and timely intervention before an attack can escalate.' 
         },
         { 
           id: 'CYBR-03', 
-          title: 'Deepfake Detection System for Indian Regional Language Audio-Visual Content', 
-          desc: 'Develop a multimodal deepfake detection system for Indian regional language content that analyzes short video clips for facial landmark inconsistencies, lip-sync errors, and audio spectral anomalies. The system should use CNNs/Vision Transformers and audio classifiers to fuse scores for a combined confidence output, providing a web-based upload-and-detect interface to combat localized misinformation.' 
+          title: 'Securing Autonomous AI Agents Against Sensitive Data Exposure', 
+          desc: 'Design an AI Agent Security Platform that continuously monitors autonomous AI agents, detects unauthorized access to sensitive information, enforces least-privilege access, identifies prompt injection and data leakage attempts, and alerts security teams before confidential data is exposed. Develop an AI security platform that enables organizations to monitor autonomous AI agents, prevent sensitive data exposure, detect prompt injection attacks, enforce secure access controls, and provide transparent auditing of AI actions. The solution should help enterprises adopt AI safely by reducing the risks associated with autonomous agent behavior while maintaining compliance and trust.' 
+        },
+        { 
+          id: 'CYBR-04', 
+          title: 'Intelligent Healthcare Data Leak Prevention and Patient Privacy Protection Platform', 
+          desc: 'Design an AI-powered Healthcare Data Protection Platform that continuously monitors access to electronic health records (EHRs), detects abnormal user behavior, prevents unauthorized disclosure of patient data, and provides real-time alerts to hospital security teams. The system should help healthcare organizations protect patient privacy while ensuring authorized medical staff can access the information they need. Build an AI-powered healthcare cybersecurity platform that protects electronic health records, detects unauthorized access and insider threats, prevents sensitive data leaks, and helps healthcare providers maintain patient privacy and regulatory compliance. The solution should enable healthcare organizations to respond rapidly to potential breaches while ensuring secure and efficient access to patient information.' 
+        },
+        { 
+          id: 'CYBR-05', 
+          title: 'Intelligent Multi-Channel Phishing Detection and Prevention System', 
+          desc: 'Design and develop a Multi-Channel Phishing Detection and Prevention Platform that helps organizations identify, analyze, and block phishing attempts across email, SMS, messaging platforms, QR codes, and websites. The system should detect suspicious content using rule-based analysis, domain validation, URL reputation, and security policies, provide real-time alerts, and assist users in reporting phishing attempts while preserving evidence for investigation. Build a phishing defense platform that enables organizations to detect phishing campaigns, verify suspicious domains and URLs, protect users from credential theft, streamline phishing reporting, and support rapid incident response. The system should reduce successful phishing attacks through layered detection, user awareness, and centralized security management without relying on AI as its primary detection.' 
         }
       ]
     }
@@ -162,64 +172,7 @@ export default function Tracks() {
       <section id="tracks" className="py-12 sm:py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* SECTION 1: Standard Hackathon Tracks */}
-          <div className="text-center mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 font-heading text-white">
-              Hackathon <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">Tracks</span>
-            </h2>
-            <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-              Select a domain below to explore its official problem statements.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24 justify-center">
-            {trackData.map((domain) => (
-              <div 
-                key={domain.id}
-                onClick={() => openDomain(domain.id)}
-                className="cursor-pointer bg-[#030811]/80 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 lg:p-8 flex flex-col text-left transition-all duration-300 hover:border-cyan/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] group h-full relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-cyan border border-cyan/40 rounded-full text-[10px] sm:text-xs font-bold tracking-widest bg-cyan/5 shadow-[0_0_10px_rgba(6,182,212,0.1)]">
-                    [{domain.tag}]
-                  </span>
-                </div>
-                
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-cyan transition-colors duration-300">
-                  {domain.name}
-                </h3>
-                
-                <div className="flex-grow flex flex-col items-start mb-6">
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                    {domain.shortDesc}
-                  </p>
-                </div>
-
-                <div className="mt-auto border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
-                    View Problem Statements
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                  
-                  <Link 
-                    href="https://www.evynte.com/event/checkout/neo-nexus-361" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()} 
-                    className="w-full sm:w-auto text-center bg-electric/20 hover:bg-electric text-white border border-electric/50 px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors shadow-[0_0_10px_rgba(14,124,196,0.2)] hover:shadow-[0_0_20px_rgba(14,124,196,0.5)] z-10 relative"
-                  >
-                    Register Now
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* SECTION 2: Build with Gemma Tracks */}
+          {/* SECTION 1: Build with Gemma Tracks */}
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 font-heading text-white">
               Build with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3186FF] to-[#4FA0FF]">Gemma</span> Tracks
@@ -242,7 +195,7 @@ export default function Tracks() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#3186FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                <div className="mb-4">
+                <div className="mb-4 flex justify-between items-start">
                   <span className="inline-block px-3 py-1 text-[#3186FF] border border-[#3186FF]/40 rounded-full text-[10px] sm:text-xs font-bold tracking-widest bg-[#3186FF]/5 shadow-[0_0_10px_rgba(49,134,255,0.1)]">
                     [{domain.tag}]
                   </span>
@@ -287,7 +240,7 @@ export default function Tracks() {
           </div>
 
           {/* GUIDELINES & REQUIREMENT BLOCK */}
-          <div className="max-w-5xl mx-auto bg-[#030811]/60 backdrop-blur-md border border-[#3186FF]/30 p-5 sm:p-6 rounded-2xl shadow-[0_0_20px_rgba(49,134,255,0.05)]">
+          <div className="max-w-5xl mx-auto bg-[#030811]/60 backdrop-blur-md border border-[#3186FF]/30 p-5 sm:p-6 rounded-2xl shadow-[0_0_20px_rgba(49,134,255,0.05)] mb-24">
             <h3 className="text-white text-sm sm:text-base font-bold uppercase tracking-wider mb-4 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
               <span className="text-[#3186FF]">⚡</span> Gemma Track Requirements & Guidelines
             </h3>
@@ -309,6 +262,63 @@ export default function Tracks() {
                 <p className="text-gray-400 text-xs leading-relaxed">Requires a concise Kaggle write-up submission along with an architectural walk-through video.</p>
               </div>
             </div>
+          </div>
+
+          {/* SECTION 2: Standard Hackathon Tracks */}
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 font-heading text-white">
+              Hackathon <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-cyan">Tracks</span>
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+              Select a domain below to explore its official problem statements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 justify-center">
+            {trackData.map((domain) => (
+              <div 
+                key={domain.id}
+                onClick={() => openDomain(domain.id)}
+                className="cursor-pointer bg-[#030811]/80 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 lg:p-8 flex flex-col text-left transition-all duration-300 hover:border-cyan/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] group h-full relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 text-cyan border border-cyan/40 rounded-full text-[10px] sm:text-xs font-bold tracking-widest bg-cyan/5 shadow-[0_0_10px_rgba(6,182,212,0.1)]">
+                    [{domain.tag}]
+                  </span>
+                </div>
+                
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-cyan transition-colors duration-300">
+                  {domain.name}
+                </h3>
+                
+                <div className="flex-grow flex flex-col items-start mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    {domain.shortDesc}
+                  </p>
+                </div>
+
+                <div className="mt-auto border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
+                    View Problem Statements
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                  
+                  <Link 
+                    href="https://www.evynte.com/event/checkout/neo-nexus-361" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} 
+                    className="w-full sm:w-auto text-center bg-electric/20 hover:bg-electric text-white border border-electric/50 px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors shadow-[0_0_10px_rgba(14,124,196,0.2)] hover:shadow-[0_0_20px_rgba(14,124,196,0.5)] z-10 relative"
+                  >
+                    Register Now
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
