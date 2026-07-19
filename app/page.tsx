@@ -1,32 +1,35 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
-// Removed Stats since they are now beautifully integrated into the About section!
 import About from "../components/About";
+import Winners from "../components/Winners"
 import Tracks from "../components/Tracks";
-import Winners from "../components/Winners";
+import Timeline from "../components/Timeline";
 import Venue from "../components/Venue";
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import GemmaSection from "../components/GemmaSection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scrolling issues */}
+      <main>
         <Hero />
-        <Stats/>
+        <Stats />
         <About />
-        <Winners/> 
+        <Winners/>
+        <GemmaSection/>
         <Tracks />
         <Venue/>
+        <Timeline />
         <Sponsors />
         <Host />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
