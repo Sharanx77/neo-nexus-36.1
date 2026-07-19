@@ -43,7 +43,7 @@ export default function Navbar() {
                 </div>
             </aside>
 
-            {/* INCREASED NAVBAR HEIGHT (h-16 on mobile, up to h-24 on desktop) */}
+            {/* NAVBAR CORE CONTAINER */}
             <nav className="fixed top-0 w-full z-30 bg-[#030811]/95 md:bg-[#030811]/85 backdrop-blur-none md:backdrop-blur-md border-b border-electric/40 shadow-lg md:shadow-[0_5px_20px_rgba(14,124,196,0.15)] py-2 sm:py-3 transition-colors">
                 <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
                     <div className="flex items-center justify-between h-16 sm:h-20 md:h-24 gap-1 md:gap-4">
@@ -81,11 +81,7 @@ export default function Navbar() {
                             <div className="flex bg-white p-0.5 sm:p-1.5 rounded-md sm:rounded-xl h-10 w-12 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-24 items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/cas_bangalore.png" alt="IEEE CAS Bangalore Chapter Logo" className="max-h-full max-w-full object-contain" />
                             </div>
-                            {/* 6. Smart City Logo */}
-                            <div className="flex bg-white p-0.5 sm:p-1.5 rounded-md sm:rounded-xl h-10 w-12 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-24 items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
-                                <img src="/logo/smart_ieee.jpeg" alt="Smart City Logo" className="max-h-full max-w-full object-contain" />
-                            </div>
-                            {/* 7. IEEE SB BITM Logo */}
+                            {/* 6. IEEE SB BITM Logo */}
                             <div className="bg-white p-0.5 sm:p-1.5 rounded-md sm:rounded-xl h-10 w-12 sm:h-12 sm:w-16 md:h-14 md:w-20 lg:h-16 lg:w-24 flex items-center justify-center border sm:border-2 border-cyan/30 shadow-sm md:shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                                 <img src="/logo/ieee_bitm.png" alt="IEEE SB Logo" className="max-h-full max-w-full object-contain" />
                             </div>
