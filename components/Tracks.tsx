@@ -29,21 +29,8 @@ export default function Tracks() {
     setActiveProblem(activeProblem === problemId ? null : problemId);
   };
 
+  // Standard Tracks (AI for Humanitarian Tech and Mobility are hidden)
   const trackData = [
-    {
-      id: 'ai',
-      tag: 'AI',
-      name: 'AI for Humanitarian Tech',
-      shortDesc: 'AI-driven solutions for social good, health, disaster relief and inclusivity.',
-      problems: [
-        { id: 'AI-01', title: 'Hyperlocal Al Disaster Early-Warning & Multilingual Alert System ', desc: 'Develop an Al-based Early Warning System that uses IMD APIs, satellite data, NDMA datasets, social media signals, and simulated loT sensor data to predict floods, cyclones, and landslides 12-72 hours in advance. The system displays risk levels and confidence scores on a Streamlit/React dashboard and sends multilingual voice and SMS alerts through Twilio/WhatsApp to communities with limited internet access, providing localized, timely disaster warnings using simulated sensor feeds without requiring physical IoT hardware. ' },
-        { id: 'AI-02', title: 'Al Health Screener for Rural Primary Health Centre Workers ', desc: 'Develop an Al-based Health Screening Assistant for PHC workers (ASHA/ANMs) that collects patient symptoms (via voice or form), vital signs, and medical history to generate low/medium/high risk stratification, referral guidance, and chronic disease alerts using an ML classifier trained on ICMR/NHP datasets. The mobile-first web app supports English and one Indian regional language (Kannada/Hindi), includes a basic patient tracker, integrates Google TTS/IndicTTS for voice assistance, and is designed for future compatibility with ABDM sandbox APIs. ' },
-        { id: 'AI-03', title: 'Affordable Al-Powered AAC Tool for Non-Verbal Differently-Abled Individuals ', desc: 'Develop an Al-powered Augmentative and Alternative Communication (AAC) tool for non-verbal individuals that enables communication through webcam-based eye-gaze tracking (MediaPipe Iris), facial gestures, or a symbol board with text-to-speech. The system adapts to user behavior by learning frequently used patterns, supports Hindi and one regional language, and provides offline, affordable communication assistance using technologies like MediaPipe, OpenCV, Coqui TTS, and SQLite. ' },
-        { id: 'AI-04', title: 'WhatsApp/IVR Crop Disease & Soil Advisory for Marginal Farmers ', desc: 'Develop an Al-powered Crop Advisory System accessible via WhatsApp or IVR that accepts crop photos or voice descriptions to detect diseases and pests using a CNN (PlantVillage dataset), provides farmer-language advisory (Hindi + Kannada), offers soil health recommendations based on NPK/pH values, and suggests relevant government schemes such as PM-KISAN and the Soil Health Card, ensuring easy access for small and marginal farmers with basic phones. ' },
-        { id: 'AI-05', title: 'Real-Time Indian Sign Language Recognition & Translation System ', desc: 'Develop a real-time Indian Sign Language (ISL) Recognition System that uses a webcam and MediaPipe Holistic to detect hand and facial landmarks, recognizes 50+ ISL signs using LSTM/Transformer models, and converts them into text and optional speech (TTS). The system also includes few-shot learning to add new signs without full retraining, achieving 80%+ accuracy for use in education, healthcare, and government services. ' },
-        { id: 'AI-06', title: 'Federated Al Platform for Privacy-Preserving Disease Surveillance Across PHCS ', desc: 'Develop a Federated Learning-Based Disease Outbreak Detection System where simulated PHC nodes train local models on symptom data without sharing raw patient records. A FedAvg aggregator combines these models to detect disease outbreaks and anomalous symptom clusters, with optional differential privacy for enhanced data security. The system displays a district-level disease risk heatmap, ensuring DPDP Act 2023 compliance while enabling real-time, privacy-preserving outbreak monitoring. ' }
-      ]
-    },
     {
       id: 'circuit',
       tag: 'CKTD',
@@ -70,19 +57,6 @@ export default function Tracks() {
         { id: 'AERO-03', title: 'Satellite Change Detection System for Airport OLS Zone Encroachment Monitoring ', desc: 'Develop an Al-based Satellite Change Detection System that compares multi-temporal Sentinel-2/Bhuvan satellite images to detect new built-up areas using U-Net or image differencing. The system identifies change polygons with coordinates and severity, checks them against AAI Obstacle Limitation Surface (OLS) boundaries, and generates a downloadable alert report with map visualization for monitoring unauthorized construction near airports. ' },
         { id: 'AERO-04', title: 'Drone Swarm Coordination Simulator for Disaster Search & Rescue ', desc: 'Develop an Albased -Multi-Drone Swarm Simulation for disaster search and rescue that simulates multiple drones using a decentralized coordination algorithm (e.g., stigmergy, auction-based, or MARL) to maximize area coverage and victim detection under battery constraints. The system provides swarm path visualization, evaluates coverage and detection metrics, and compares performance against a single-drone baseline. ' },
         { id: 'AERO-05', title: 'Al Space Weather Impact Predictor for LEO Satellite Operations ', desc: 'Develop an Al-based Space Weather Impact Prediction System for LEO satellites that uses NOAA SWPC alerts and Kp index data to predict atmospheric drag and orbit decay using LSTM/Gaussian Process models. The system estimates re-entry timeline changes for user-defined satellite TLEs, displays a risk dashboard, and sends configurable alerts when space weather conditions exceed specified Kp thresholds. ' }
-      ]
-    },
-    {
-      id: 'mob',
-      tag: 'MOB',
-      name: 'Mobility',
-      shortDesc: 'EVs, autonomous vehicles, transportation and logistics solutions.',
-      problems: [
-        { id: 'MOB-01', title: 'Predictive Battery State-of-Health System for Indian EV Two-Wheelers ', desc: 'Develop an Al-based Battery State of Health (SoH) and Remaining Useful Life (RUL) Prediction System that uses NASA/CALCE battery datasets to train an LSTM/Gaussian Process model, applies Indian 2-wheeler duty cycle corrections (city traffic, monsoon charging, heat stress), and provides an interactive fleet dashboard with SoH/RUL predictions, configurable alerts, and model performance metrics (MAE/RMSE). ' },
-        { id: 'MOB-02', title: 'Reinforcement Learning-Based Adaptive Traffic Signal Control for Indian Intersections ', desc: 'Develop an Al-based Adaptive Traffic Signal Control System using SUMO and DQN/Q-learning to optimize signal timings at a 4-way Indian mixed-traffic intersection based on real-time queue lengths. The system compares performance with fixed-timing and Webster\'s method under peak and off-peak traffic, evaluates wait time, throughput, and emissions, and optionally uses YOLO-based vehicle counting from real traffic video. ' },
-        { id: 'MOB-03', title: 'Accessibility-First Multi-Modal Journey Planner Using Indian GTFS Data ', desc: 'Develop an accessible multi-modal journey planner that uses GTFS data (BMTC/BEST/DTC) and OpenStreetMap to provide cost-optimized, accessibility-aware routes with elevators, ramps, and accessible stops. The app features a screen-reader (ARIA) compatible interface, voice guidance, real-time disruption alerts, and supports multi-modal routing using Dijkstra/A* algorithms. ' },
-        { id: 'MOB-04', title: 'Vehicle-to-Grid (V2G) Energy Management System Simulator for Indian EV Fleets ', desc: 'Develop an Al-based Vehicle-to-Grid (V2G) Energy Management System that simulates an EV fleet and a local grid with solar generation and demand variability using POSOCO data. The system uses LP or RL optimization to schedule charging/discharging cycles, minimizing electricity costs while maintaining vehicle availability, and provides a dashboard comparing cost savings and grid stress reduction with and without V2G. ' },
-        { id: 'MOB-05', title: 'Autonomous Last-Mile Delivery Robot Simulation for Indian Urban Environments ', desc: 'Develop a ROS2-based Autonomous Delivery Robot Simulation that navigates a simulated Indian urban environment using LiDAR, camera, and SLAM (GMapping/Cartographer) for mapping and localization. The system performs dynamic obstacle avoidance, multi-stop route optimization, and monsoon visibility simulation, while evaluating delivery success rate, travel time, and collision metrics in Gazebo/AirSim. ' }
       ]
     },
     {
@@ -115,7 +89,8 @@ export default function Tracks() {
       id: 'gemma-cities',
       tag: 'GEMMA',
       name: 'AI for Sustainable Cities',
-      shortDesc: 'Build AI solutions that create smarter, safer, greener, and more connected cities using Gemma models .',
+      shortDesc: 'Build AI solutions that create smarter, safer, greener, and more connected cities using Gemma models.',
+      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Smart Mobility & Traffic Management' },
         { id: 'FOCUS-02', title: 'Public Services & Citizen Engagement' },
@@ -123,7 +98,8 @@ export default function Tracks() {
         { id: 'FOCUS-04', title: 'Waste & Water Management' },
         { id: 'FOCUS-05', title: 'Energy & Environmental Sustainability' },
         { id: 'FOCUS-06', title: 'Disaster Management & Emergency Response' },
-        { id: 'FOCUS-07', title: 'Smart Governance & Civic Tech' }
+        { id: 'FOCUS-07', title: 'Smart Governance & Civic Tech' },
+        { id: 'FOCUS-08', title: 'Open Innovation: Formulate and solve your own unique problem statement within this domain.' }
       ]
     },
     {
@@ -131,6 +107,7 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Cyber Security',
       shortDesc: 'Develop AI-powered solutions that enhance digital security, privacy, and cyber resilience.',
+      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Threat Detection & Incident Response' },
         { id: 'FOCUS-02', title: 'Phishing & Fraud Detection' },
@@ -138,7 +115,8 @@ export default function Tracks() {
         { id: 'FOCUS-04', title: 'Security Operations (SOC) Automation' },
         { id: 'FOCUS-05', title: 'Identity & Access Management' },
         { id: 'FOCUS-06', title: 'Privacy & Data Protection' },
-        { id: 'FOCUS-07', title: 'Secure Coding & Developer Security Tools' }
+        { id: 'FOCUS-07', title: 'Secure Coding & Developer Security Tools' },
+        { id: 'FOCUS-08', title: 'Open Innovation: Formulate and solve your own unique problem statement within this domain.' }
       ]
     },
     {
@@ -146,6 +124,7 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Education',
       shortDesc: 'Create AI applications that make learning more personalized, accessible, and engaging.',
+      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'AI Tutors & Personalized Learning' },
         { id: 'FOCUS-02', title: 'Student Assessment & Feedback' },
@@ -153,7 +132,8 @@ export default function Tracks() {
         { id: 'FOCUS-04', title: 'Accessibility & Inclusive Education' },
         { id: 'FOCUS-05', title: 'Teacher Productivity Tools' },
         { id: 'FOCUS-06', title: 'Career Guidance & Skill Development' },
-        { id: 'FOCUS-07', title: 'Lifelong Learning' }
+        { id: 'FOCUS-07', title: 'Lifelong Learning' },
+        { id: 'FOCUS-08', title: 'Open Innovation: Formulate and solve your own unique problem statement within this domain.' }
       ]
     },
     {
@@ -161,6 +141,7 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Humanitarian Tech',
       shortDesc: 'Develop AI solutions that improve lives and address pressing societal challenges.',
+      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Healthcare & Public Health' },
         { id: 'FOCUS-02', title: 'Disaster Relief & Crisis Response' },
@@ -168,7 +149,8 @@ export default function Tracks() {
         { id: 'FOCUS-04', title: 'Mental Health & Well-being' },
         { id: 'FOCUS-05', title: 'Agriculture & Food Security' },
         { id: 'FOCUS-06', title: 'Financial Inclusion' },
-        { id: 'FOCUS-07', title: 'Climate Action & Social Impact' }
+        { id: 'FOCUS-07', title: 'Climate Action & Social Impact' },
+        { id: 'FOCUS-08', title: 'Open Innovation: Formulate and solve your own unique problem statement within this domain.' }
       ]
     }
   ];
@@ -190,7 +172,7 @@ export default function Tracks() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24 justify-center">
             {trackData.map((domain) => (
               <div 
                 key={domain.id}
@@ -209,9 +191,11 @@ export default function Tracks() {
                   {domain.name}
                 </h3>
                 
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
-                  {domain.shortDesc}
-                </p>
+                <div className="flex-grow flex flex-col items-start mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    {domain.shortDesc}
+                  </p>
+                </div>
 
                 <div className="mt-auto border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-cyan group-hover:text-white transition-colors flex items-center gap-2">
@@ -241,10 +225,10 @@ export default function Tracks() {
               Build with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3186FF] to-[#4FA0FF]">Gemma</span> Tracks
             </h2>
             <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-2">
-              Build innovative AI solutions powered by Gemma 4, Google's family of open models .
+              Build innovative AI solutions powered by Gemma 4, Google's family of open models.
             </p>
             <p className="text-gray-500 text-xs font-medium">
-              Gemma is a trademark of Google LLC .
+              Gemma is a trademark of Google LLC.
             </p>
           </div>
 
@@ -268,9 +252,17 @@ export default function Tracks() {
                   {domain.name}
                 </h3>
                 
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">
-                  {domain.shortDesc}
-                </p>
+                <div className="flex-grow flex flex-col items-start mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    {domain.shortDesc}
+                  </p>
+                  
+                  {domain.prize && (
+                    <span className="mt-4 inline-block px-3 py-1.5 text-yellow-400 border border-yellow-400/40 rounded-lg text-[10px] sm:text-xs font-bold tracking-widest bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.2)]">
+                      🏆 PRIZE: {domain.prize}
+                    </span>
+                  )}
+                </div>
 
                 <div className="mt-auto border-t border-white/10 pt-5 flex flex-col gap-4">
                   <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide text-[#3186FF] group-hover:text-white transition-colors flex items-center justify-between">
@@ -294,7 +286,7 @@ export default function Tracks() {
             ))}
           </div>
 
-          {/* --- REDUCED GUIDELINES & REQUIREMENT BLOCK MOVED AFTER TRACKS --- */}
+          {/* GUIDELINES & REQUIREMENT BLOCK */}
           <div className="max-w-5xl mx-auto bg-[#030811]/60 backdrop-blur-md border border-[#3186FF]/30 p-5 sm:p-6 rounded-2xl shadow-[0_0_20px_rgba(49,134,255,0.05)]">
             <h3 className="text-white text-sm sm:text-base font-bold uppercase tracking-wider mb-4 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
               <span className="text-[#3186FF]">⚡</span> Gemma Track Requirements & Guidelines
@@ -302,19 +294,19 @@ export default function Tracks() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
               <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
                 <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">1. Model Integration</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Must actively deploy Gemma models via prompting, RAG, or fine-tuning pipelines .</p>
+                <p className="text-gray-400 text-xs leading-relaxed">Must actively deploy Gemma models via prompting, RAG, or fine-tuning pipelines.</p>
               </div>
               <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
                 <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">2. Target Impact</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Solutions must present creative and structurally effective approaches to problem solving .</p>
+                <p className="text-gray-400 text-xs leading-relaxed">Solutions must present creative and structurally effective approaches to problem solving.</p>
               </div>
               <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
                 <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">3. Working Prototype</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Evaluations depend entirely on live runtime stability and production repository checks .</p>
+                <p className="text-gray-400 text-xs leading-relaxed">Evaluations depend entirely on live runtime stability and production repository checks.</p>
               </div>
               <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5">
                 <h4 className="text-[#4FA0FF] font-bold text-xs sm:text-sm mb-1">4. Deliverables</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Requires a concise Kaggle write-up submission along with an architectural walk-through video .</p>
+                <p className="text-gray-400 text-xs leading-relaxed">Requires a concise Kaggle write-up submission along with an architectural walk-through video.</p>
               </div>
             </div>
           </div>
@@ -357,6 +349,7 @@ export default function Tracks() {
                 const hasDesc = !!problem.desc;
                 const isProblemActive = activeProblem === problem.id;
                 const isGemma = activeDomainData.tag === 'GEMMA';
+                const isOpenInnovation = problem.id === 'FOCUS-08';
                 
                 return (
                   <div 
@@ -365,7 +358,9 @@ export default function Tracks() {
                     className={`${hasDesc ? 'cursor-pointer' : 'cursor-default'} rounded-xl sm:rounded-2xl border transition-all duration-300 flex flex-col bg-[#030811] overflow-hidden
                       ${(isProblemActive && hasDesc) 
                         ? (isGemma ? 'border-[#3186FF] shadow-[0_0_20px_rgba(49,134,255,0.4)]' : 'border-electric shadow-[0_0_20px_rgba(14,124,196,0.4)]') 
-                        : (isGemma ? 'border-white/10 hover:border-[#3186FF]/40 hover:bg-white/5' : 'border-white/10 hover:border-cyan/40 hover:bg-white/5')
+                        : (isGemma 
+                            ? (isOpenInnovation ? 'border-yellow-400/50 shadow-[0_0_15px_rgba(250,204,21,0.15)] bg-yellow-400/5' : 'border-white/10 hover:border-[#3186FF]/40 hover:bg-white/5') 
+                            : 'border-white/10 hover:border-cyan/40 hover:bg-white/5')
                       }`}
                   >
                     {hasDesc ? (
@@ -397,10 +392,15 @@ export default function Tracks() {
                     ) : (
                       // GEMMA TRACK: Simple Point Focus Area
                       <div className="p-3 sm:p-4 flex items-center gap-3 sm:gap-4">
-                        <span className="shrink-0 inline-block px-2.5 py-0.5 rounded-full bg-[#3186FF]/20 text-[#4FA0FF] text-[10px] sm:text-xs font-mono font-bold border border-[#3186FF]/30 shadow-[0_0_10px_rgba(49,134,255,0.2)]">
+                        <span className={`shrink-0 inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-bold border 
+                          ${isOpenInnovation 
+                            ? 'bg-yellow-400/20 text-yellow-400 border-yellow-400/40 shadow-[0_0_10px_rgba(250,204,21,0.2)]' 
+                            : 'bg-[#3186FF]/20 text-[#4FA0FF] border-[#3186FF]/30 shadow-[0_0_10px_rgba(49,134,255,0.2)]'
+                          }`}
+                        >
                           {problem.id}
                         </span>
-                        <h4 className="font-bold text-sm sm:text-base text-gray-200">
+                        <h4 className={`font-bold text-sm sm:text-base ${isOpenInnovation ? 'text-yellow-100' : 'text-gray-200'}`}>
                           {problem.title}
                         </h4>
                       </div>
