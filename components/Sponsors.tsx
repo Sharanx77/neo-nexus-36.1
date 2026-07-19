@@ -11,7 +11,6 @@ export default function Sponsors() {
     { logo: "/logo/mathworks.jpeg", alt: "MathWorks" },
     { logo: "/logo/coreEL.png", alt: "CoreEL" },
     { logo: "/logo/sight_ieee.png", alt: "IEEE SIGHT" },
-    { logo: "/logo/smart_ieee.jpeg", alt: "IEEE Smart Village" },
     { logo: "/logo/naratech_bang.png", alt: "NaraTech" },
     { logo: "/logo/AESSBLR.jpeg", alt: "IEEE AESS Bangalore" },
     { logo: "/logo/cadence.png", alt: "Cadence" }
