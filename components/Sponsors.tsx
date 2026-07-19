@@ -13,7 +13,7 @@ export default function Sponsors() {
     { logo: "/logo/sight_ieee.png", alt: "IEEE SIGHT" },
     { logo: "/logo/naratech_bang.png", alt: "NaraTech" },
     { logo: "/logo/AESSBLR.jpeg", alt: "IEEE AESS Bangalore" },
-    { logo: "/logo/cadence.png", alt: "Cadence" }
+    { logo: "/logo/cas_bangalore.png", alt: "IEEE CAS Bangalore Chapter" }
   ];
 
   return (
