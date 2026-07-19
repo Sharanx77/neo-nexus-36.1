@@ -4,7 +4,6 @@ import Stats from "../components/Stats";
 import About from "../components/About";
 import Winners from "../components/Winners"
 import Tracks from "../components/Tracks";
-import Timeline from "../components/Timeline";
 import Venue from "../components/Venue";
 import Sponsors from "../components/Sponsors";
 import Host from "../components/Host";
@@ -24,7 +23,6 @@ export default function Home() {
         <GemmaSection/>
         <Tracks />
         <Venue/>
-        <Timeline />
         <Sponsors />
         <Host />
         <Contact />
