@@ -24,7 +24,7 @@ export default function Contact() {
           <div className="bg-[#030811]/60 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-electric/40 shadow-[0_0_15px_rgba(14,124,196,0.15)] flex flex-col justify-center hover:border-electric/70 transition-colors">
             <span className="text-electric text-[10px] sm:text-xs font-bold tracking-widest uppercase block mb-1">Event Volunteer</span>
             <p className="text-white font-extrabold text-xl sm:text-2xl mb-1">A Ananda</p>
-            <p className="text-gray-300 text-sm sm:text-base font-mono font-semibold mb-0.5">+91 8105793874</p>
+            <p className="text-gray-300 text-sm sm:text-base font-mono font-semibold mb-0.5">+91 8904282081</p>
             <p className="text-gray-300 text-sm sm:text-base font-medium break-all">ananda.a@ieee.org</p>
           </div>
 
