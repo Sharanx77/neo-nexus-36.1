@@ -100,7 +100,6 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Sustainable Cities',
       shortDesc: 'Build AI solutions that create smarter, safer, greener, and more connected cities using Gemma models.',
-      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Smart Mobility & Traffic Management' },
         { id: 'FOCUS-02', title: 'Public Services & Citizen Engagement' },
@@ -117,7 +116,6 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Cyber Security',
       shortDesc: 'Develop AI-powered solutions that enhance digital security, privacy, and cyber resilience.',
-      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Threat Detection & Incident Response' },
         { id: 'FOCUS-02', title: 'Phishing & Fraud Detection' },
@@ -134,7 +132,6 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Education',
       shortDesc: 'Create AI applications that make learning more personalized, accessible, and engaging.',
-      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'AI Tutors & Personalized Learning' },
         { id: 'FOCUS-02', title: 'Student Assessment & Feedback' },
@@ -151,7 +148,6 @@ export default function Tracks() {
       tag: 'GEMMA',
       name: 'AI for Humanitarian Tech',
       shortDesc: 'Develop AI solutions that improve lives and address pressing societal challenges.',
-      prize: '$250',
       problems: [
         { id: 'FOCUS-01', title: 'Healthcare & Public Health' },
         { id: 'FOCUS-02', title: 'Disaster Relief & Crisis Response' },
@@ -210,7 +206,8 @@ export default function Tracks() {
                     {domain.shortDesc}
                   </p>
                   
-                  {domain.prize && (
+                  {/* The prize badge rendering has been safely kept in the JSX logic, but will remain hidden as the prize data is removed. */}
+                  {'prize' in domain && domain.prize && (
                     <span className="mt-4 inline-block px-3 py-1.5 text-yellow-400 border border-yellow-400/40 rounded-lg text-[10px] sm:text-xs font-bold tracking-widest bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.2)]">
                       🏆 PRIZE: {domain.prize}
                     </span>
