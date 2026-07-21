@@ -205,13 +205,6 @@ export default function Tracks() {
                   <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                     {domain.shortDesc}
                   </p>
-                  
-                  {/* The prize badge rendering has been safely kept in the JSX logic, but will remain hidden as the prize data is removed. */}
-                  {'prize' in domain && domain.prize && (
-                    <span className="mt-4 inline-block px-3 py-1.5 text-yellow-400 border border-yellow-400/40 rounded-lg text-[10px] sm:text-xs font-bold tracking-widest bg-yellow-400/10 shadow-[0_0_10px_rgba(250,204,21,0.2)]">
-                      🏆 PRIZE: {domain.prize}
-                    </span>
-                  )}
                 </div>
 
                 <div className="mt-auto border-t border-white/10 pt-5 flex flex-col gap-4">
@@ -423,5 +416,3 @@ export default function Tracks() {
     </>
   );
 }
-
-
