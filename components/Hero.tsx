@@ -53,6 +53,18 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* NEW REGISTRATION ALERT */}
+        <div className="mb-8 flex justify-center px-4">
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-yellow-400/10 border border-yellow-400/50 px-6 py-3 rounded-full shadow-[0_0_20px_rgba(250,204,21,0.2)] animate-pulse">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase">
+              Registration closes by 26th July
+            </span>
+          </div>
+        </div>
+
         <div className="mb-12">
           <CountdownTimer />
         </div>
